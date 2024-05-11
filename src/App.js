@@ -5,6 +5,7 @@ import Profile from './pages/Profile';
 import Library from './pages/Library';
 import Downloads from './pages/Downloads';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const user = {
@@ -26,6 +27,7 @@ function App() {
           <Route path="downloads" element={<Downloads />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer user={user} />
       </BrowserRouter>
     </div>
   );
