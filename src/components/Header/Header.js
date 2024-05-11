@@ -32,11 +32,10 @@ export default function Header({ user }) {
       <div style={{ display: 'flex' }}>
         <Link to="/" className="steam-logo-container">
           <img
-            src="/media/images/steam-logo.png"
+            src="/media/images/steam-logo-big.png"
             alt="steam logo"
             className="header-steam-logo"
           />
-          STEAM
         </Link>
         <div className="sections">
           {headers.map((header) => (

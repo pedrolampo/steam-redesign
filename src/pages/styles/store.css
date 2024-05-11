@@ -1,0 +1,46 @@
+.store {
+  background: rgb(4, 0, 17);
+  background: linear-gradient(
+    180deg,
+    rgba(4, 0, 17, 1) 0%,
+    rgba(32, 43, 59, 1) 75%
+  );
+}
+
+.store .navbar .buttons-container:has(.settings-icon) {
+  gap: 1.5em;
+}
+.store .navbar .navbar-button:has(.settings-icon) {
+  padding: 0.7em 0.75em;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-hover);
+}
+.store .navbar .settings-icon {
+  width: 1.75em;
+}
+
+.store .store-banner img {
+  width: 100%;
+}
+
+.store .main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+.store .store-section {
+  width: 70%;
+}
+.store .store-section h4 {
+  font-size: 1.15em;
+}
+.store .store-section .container {
+  background-color: #0e141b38;
+  width: 100%;
+  height: 30em;
+  margin-bottom: 50em;
+}
