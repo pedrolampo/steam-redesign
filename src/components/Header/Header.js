@@ -65,7 +65,7 @@ export default function Header({ user }) {
             alt="profile"
             src="media/images/profile-picture.jpg"
           />
-          Kaladin <span className="wallet-funds">$4.20</span>
+          {user.username} <span className="wallet-funds">$4.20</span>
           <img
             alt="dropdown arrow icon"
             src="media/images/dropdown-arrow.png"

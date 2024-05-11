@@ -9,7 +9,7 @@ import Header from './components/Header/Header';
 function App() {
   const user = {
     id: 1,
-    username: 'Kaladin',
+    username: 'Pedrolampo',
   };
 
   return (
