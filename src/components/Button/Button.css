@@ -1,0 +1,42 @@
+.button {
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.button button {
+  font-family: MotivaSans;
+  font-size: 1.25em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-secondary);
+}
+
+.button.primary button {
+  color: var(--text-main);
+  background-color: var(--color-secondary);
+}
+.button.primary:hover button {
+  color: var(--bg-main);
+  background-color: var(--color-primary);
+}
+
+.button.secondary button {
+  color: var(--text-main);
+  background-color: var(--bg-highlight);
+}
+.button.secondary:hover button {
+  color: var(--text-main);
+  background-color: var(--bg-hover);
+}
+
+.button.tertiary button {
+  border: 1px solid var(--text-dim);
+  color: var(--text-dim);
+  background-color: transparent;
+}
+.button.tertiary:hover button {
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+  background-color: transparent;
+}

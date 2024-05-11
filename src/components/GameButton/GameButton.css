@@ -1,0 +1,44 @@
+.game-button {
+  font-family: MotivaSans;
+  font-size: 1.25em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: fit-content;
+}
+
+.game-button.play:hover {
+  filter: brightness(107%);
+}
+.game-button.install:hover {
+  filter: brightness(107%);
+}
+.game-button.pause:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.game-button img.icon {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+}
+
+.game-button.play {
+  color: var(--bg-main);
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  background-color: var(--accent-green);
+}
+.game-button.install {
+  color: var(--bg-main);
+  padding: 0.7em 1.4em 0.7em 1.15em;
+  background-color: var(--color-primary);
+}
+.game-button.pause {
+  color: var(--text-main);
+  background-color: var(--bg-hover);
+  padding: 0.7em 1.4em 0.7em 1.2em;
+}

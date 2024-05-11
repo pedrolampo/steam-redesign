@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Store from './pages/Store';
+import Community from './pages/Community';
+import Profile from './pages/Profile';
+import Library from './pages/Library';
+import Downloads from './pages/Downloads';
+import Header from './components/Header/Header';
 
 function App() {
+  const user = {
+    id: 1,
+    username: 'Kaladin',
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header user={user} />
+        <Routes>
+          {['/', 'store'].map((path) => (
+            <Route key={path} path={path} element={<Store />} />
+          ))}
+          <Route path="community" element={<Community />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="library" element={<Library />} />
+          <Route path="downloads" element={<Downloads />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
