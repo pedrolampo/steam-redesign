@@ -70,7 +70,9 @@ export default function Header({ user }) {
             src="media/images/dropdown-arrow.png"
           />
         </div>
-        <div className="help">Help</div>
+        <Link to="/support" className="help">
+          Help
+        </Link>
         <div className="view">
           View
           <img

@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import Store from './pages/Store';
 import Community from './pages/Community';
 import Profile from './pages/Profile';
 import Library from './pages/Library';
 import Downloads from './pages/Downloads';
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const user = {

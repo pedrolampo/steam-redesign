@@ -90,6 +90,7 @@
 .user-section .help {
   color: var(--text-dim);
   cursor: pointer;
+  text-decoration: none;
 }
 .user-section .view {
   display: flex;

@@ -8,14 +8,11 @@
   padding-bottom: 5em;
 }
 
-.store .navbar {
-  position: sticky;
-}
 .store .navbar .buttons-container:has(.settings-icon) {
   gap: 1.5em;
 }
 .store .navbar .navbar-button:has(.settings-icon) {
-  padding: 0.7em 0.75em;
+  padding: 0.6em 0.7em;
   display: grid;
   place-items: center;
   background-color: var(--bg-hover);
@@ -41,9 +38,138 @@
 }
 .store .store-section h4 {
   font-size: 1.15em;
+  color: var(--text-main);
+  margin-top: 5em;
+  margin-bottom: 1em;
 }
 .store .store-section .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #0e141b38;
   width: 100%;
-  height: 30em;
+  max-width: 100%;
+  height: 31em;
+  border-radius: 3px;
+}
+.store .store-carousel {
+  background-color: var(--bg-main);
+  width: 90%;
+  height: 95%;
+  display: flex;
+  border-radius: 3px;
+  justify-content: center;
+}
+.store .store-carousel .carousel-indicators {
+  bottom: -65px;
+}
+.store .store-carousel .carousel-control-next,
+.store .store-carousel .carousel-control-prev {
+  width: fit-content;
+}
+.store .store-carousel .carousel-control-prev {
+  left: -45px;
+}
+.store .store-carousel .carousel-control-next {
+  right: -45px;
+}
+.store .store-carousel .carousel-item {
+  height: 100%;
+  cursor: pointer;
+}
+
+.store .store-carousel .carousel-inner {
+  padding: 1em;
+  border-radius: 3px;
+}
+
+.store .carousel-img-container {
+  display: flex;
+  justify-content: center;
+}
+.store .store-carousel .carousel-main-img {
+  border-radius: 3px;
+  height: 100%;
+}
+
+.store .store-carousel .carousel-item-container {
+  display: flex;
+  gap: 1.5em;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.store .carousel-game-about {
+  max-width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* gap: 0.5em; */
+  align-items: start;
+}
+.store .carousel-game-about .carousel-game-name {
+  font-size: 1.75em;
+}
+.store .carousel-game-about .carousel-game-description {
+  font-size: 0.8em;
+}
+.store .carousel-about-imgs {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  grid-row: auto auto;
+  grid-column-gap: 0.75em;
+  grid-row-gap: 0.75em;
+}
+.store .carousel-about-imgs img {
+  width: 100%;
+  max-height: 5em;
+}
+
+.store .carousel-item-container .carousel-tags-container {
+  display: flex;
+  gap: 0.25em;
+}
+.store .carousel-item-container .carousel-tags-container .carousel-tag {
+  font-size: 0.6em;
+  background-color: var(--bg-highlight);
+  padding: 0.3em 0.75em;
+  border-radius: 3px;
+}
+.store .carousel-item-container .carousel-tags-container .carousel-tag:hover {
+  background-color: var(--bg-hover);
+}
+
+.store .carousel-item-container .carousel-footer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.store .carousel-item-container .carousel-footer .button button {
+  padding: 0.5em 1.35em;
+  font-size: 0.9em;
+}
+.store .carousel-item-container .carousel-footer .carousel-buy-now {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .store .store-section {
+    width: 90%;
+  }
+  .store .store-section .container {
+    height: 27.5em;
+  }
+  .store .carousel-game-about .carousel-game-name {
+    font-size: 1.4em;
+  }
+  .store .carousel-game-about .carousel-game-description {
+    font-size: 0.7em;
+  }
+  .store .carousel-item-container .carousel-footer .button button {
+    font-size: 0.9em;
+    padding: 0.75em 1.35em;
+  }
 }
