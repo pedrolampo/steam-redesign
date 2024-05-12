@@ -134,9 +134,11 @@
   background-color: var(--bg-highlight);
   padding: 0.3em 0.75em;
   border-radius: 3px;
+  color: var(--text-dim);
 }
 .store .carousel-item-container .carousel-tags-container .carousel-tag:hover {
   background-color: var(--bg-hover);
+  color: var(--text-main);
 }
 
 .store .carousel-item-container .carousel-footer {
