@@ -1,0 +1,93 @@
+.store-browse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.store-browse h3 {
+  color: var(--text-main);
+  margin-bottom: 1em;
+}
+.store-browse .main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4em;
+}
+.store-browse .main-content .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0e141b38;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.store-browse .store-carousel {
+  background-color: var(--bg-main);
+  width: 90%;
+  height: 95%;
+  display: flex;
+  border-radius: 3px;
+  justify-content: center;
+}
+.store-browse .store-carousel .carousel-indicators {
+  bottom: -65px;
+  display: none;
+}
+.store-browse .store-carousel .carousel-control-next,
+.store-browse .store-carousel .carousel-control-prev {
+  width: fit-content;
+}
+.store-browse .store-carousel .carousel-control-prev {
+  left: -45px;
+}
+.store-browse .store-carousel .carousel-control-next {
+  right: -45px;
+}
+.store-browse .store-carousel .carousel-item {
+  height: 100%;
+  cursor: pointer;
+}
+
+.store-browse .store-carousel .carousel-inner {
+  padding: 1em;
+  border-radius: 3px;
+}
+
+.store-browse .store-section .container.categories {
+  height: auto;
+  padding: 1em 0;
+}
+.store-browse .store-section .container.categories .store-carousel {
+  background-color: transparent;
+}
+.store-browse .store-section .categories .categories-item {
+  display: flex;
+  gap: 0.75em;
+  justify-content: center;
+  align-items: center;
+}
+.store-browse .store-section .categories .category-carousel-card {
+  width: max-content;
+  border-radius: 5px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: filter 0.2s ease-in-out;
+}
+.store-browse .store-section .categories .category-carousel-card:hover {
+  filter: brightness(1.4);
+}
+.store-browse .store-section .categories .category-carousel-card img {
+  width: 100%;
+}
+.store-browse .store-section .categories .category-carousel-card span {
+  position: absolute;
+  font-weight: 500;
+  font-size: 1.25em;
+}

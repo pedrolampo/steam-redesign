@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Header user={user} />
         <Routes>
-          {['/', 'store'].map((path) => (
+          {['/', 'store', '/store/:id'].map((path) => (
             <Route key={path} path={path} element={<Store />} />
           ))}
           <Route path="community" element={<Community />} />
