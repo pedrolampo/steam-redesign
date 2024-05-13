@@ -36,11 +36,21 @@
 .store .store-section {
   width: 70%;
 }
+.store .store-section .store-section-header {
+  margin-top: 5em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .store .store-section h4 {
   font-size: 1.15em;
   color: var(--text-main);
-  margin-top: 5em;
-  margin-bottom: 1em;
+}
+.store .store-section .store-section-header button {
+  font-size: 0.85em;
+  border-color: #76808c60;
+  padding: 0.25em 0.75em;
 }
 .store .store-section .container {
   display: flex;
@@ -253,6 +263,37 @@
 }
 .store .store-section .special-offers .carousel-card .footer-container button {
   padding: 0.2em 0.35em;
+}
+
+/* CATEGORIES */
+
+.store .store-section .container.categories {
+  height: auto;
+  padding: 1em 0;
+}
+.store .store-section .container.categories .store-carousel {
+  background-color: transparent;
+}
+.store .store-section .categories .categories-item {
+  display: flex;
+  gap: 0.75em;
+  justify-content: center;
+  align-items: center;
+}
+.store .store-section .categories .category-carousel-card {
+  width: max-content;
+  border-radius: 5px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.store .store-section .categories .category-carousel-card img {
+  width: 100%;
+}
+.store .store-section .categories .category-carousel-card span {
+  position: absolute;
+  font-weight: 500;
+  font-size: 1.25em;
 }
 
 @media screen and (max-width: 1700px) {

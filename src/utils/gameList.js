@@ -23,7 +23,7 @@ export const gameList = [
     id: uuidV4(),
     name: 'Homeworld 3',
     description:
-      'Tactical, beautiful, and wholly unique, the GOTY-winning sci-fi RTS returns with Homeworld 3. Assume control and battle through fleet combat in dazzling, fully 3D space while the award-winning story unfolds on a galactic scale.',
+      'The GOTY-winning sci-fi RTS returns with Homeworld 3. Assume control and battle through fleet combat in dazzling, fully 3D space while the award-winning story unfolds on a galactic scale.',
     folderName: 'homeworld-3',
     basePrice: '29.99',
     editions: [
@@ -104,5 +104,28 @@ export const specialOffers = [
     discAmount: '60',
     endDate: 'Only Today!',
     folderName: 'beyond-2-souls',
+  },
+];
+
+export const storeCategories = [
+  {
+    id: uuidV4(),
+    name: 'Action',
+  },
+  {
+    id: uuidV4(),
+    name: 'RPG',
+  },
+  {
+    id: uuidV4(),
+    name: 'Free-to-Play',
+  },
+  {
+    id: uuidV4(),
+    name: 'Anime',
+  },
+  {
+    id: uuidV4(),
+    name: 'Co-Op',
   },
 ];

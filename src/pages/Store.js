@@ -5,11 +5,12 @@ import './styles/store.css';
 import Button from '../components/Button/Button';
 import Carousel from 'react-bootstrap/Carousel';
 
-import { gameList, specialOffers } from '../utils/gameList';
+import { gameList, specialOffers, storeCategories } from '../utils/gameList';
 
 export default function Store() {
   const featuredGames = gameList.slice(0, 3);
   const specialOffersCarouselQty = ['0', '1', '2', '3'];
+  const cateogriesCarouselQty = ['0', '1'];
 
   return (
     <div className="store">
@@ -174,7 +175,10 @@ export default function Store() {
         </div>
 
         <div className="store-section">
-          <h4>Special Offers</h4>
+          <div className="store-section-header">
+            <h4>Special Offers</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
           <div className="container special-offers">
             <Carousel pause="hover" className="store-carousel">
               {specialOffersCarouselQty.map((qty) => (
@@ -213,6 +217,32 @@ export default function Store() {
                             </div>
                           </div>
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>Browse Steam</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
+          <div className="container categories">
+            <Carousel pause="hover" className="store-carousel">
+              {cateogriesCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="categories-item">
+                    {storeCategories.map((category) => (
+                      <div key={category.id} className="category-carousel-card">
+                        <img
+                          src={`media/images/categories/${category.name.toLowerCase()}.png`}
+                          alt={category.name}
+                        />
+                        <span className="category-title">{category.name}</span>
                       </div>
                     ))}
                   </div>
