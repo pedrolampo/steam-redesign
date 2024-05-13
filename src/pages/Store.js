@@ -5,10 +5,11 @@ import './styles/store.css';
 import Button from '../components/Button/Button';
 import Carousel from 'react-bootstrap/Carousel';
 
-import { gameList } from '../utils/gameList';
+import { gameList, specialOffers } from '../utils/gameList';
 
 export default function Store() {
   const featuredGames = gameList.slice(0, 3);
+  const specialOffersCarouselQty = ['0', '1', '2', '3'];
 
   return (
     <div className="store">
@@ -97,8 +98,10 @@ export default function Store() {
 
       <div className="main-content">
         <div className="store-section">
-          <h4>FEATURED</h4>
-          <div className="container">
+          <div className="store-section-header">
+            <h4>FEATURED</h4>
+          </div>
+          <div className="container featured">
             <Carousel pause="hover" className="store-carousel">
               {featuredGames.map((game) => (
                 <Carousel.Item key={game.id}>
@@ -163,6 +166,55 @@ export default function Store() {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        <div className="store-section">
+          <h4>Special Offers</h4>
+          <div className="container special-offers">
+            <Carousel pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="special-offer-item">
+                    {specialOffers.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/games/${game.folderName}/cover.png`}
+                          alt={game.name}
+                        />
+                        <div className="carousel-card-footer">
+                          <span className="game-title">{game.name}</span>
+                          <div className="footer-container">
+                            <img
+                              className="windows-logo"
+                              src={`media/images/windows-logo.png`}
+                              alt="windows logo"
+                            />
+                            <div className="dct-container">
+                              <span className="end-date">{game.endDate}</span>
+                              <span className="disc-amount">
+                                -{game.discAmount}%
+                              </span>
+                              <div className="price-container">
+                                <span className="price">${game.price}</span>
+                                <span className="disc-price">
+                                  ${game.discPrice}
+                                </span>
+                              </div>
+                              <Button
+                                variant="secondary"
+                                text=""
+                                extra="wishlistHeartEmpty"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </Carousel.Item>
               ))}

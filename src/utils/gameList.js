@@ -1,6 +1,8 @@
+import { v4 as uuidV4 } from 'uuid';
+
 export const gameList = [
   {
-    id: 1,
+    id: uuidV4(),
     name: 'Hades II',
     description:
       'Battle beyond the Underworld using dark sorcery to take on the Titan of Time in this bewitching sequel to the award-winning rogue-like dungeon crawler.',
@@ -18,7 +20,7 @@ export const gameList = [
     tags: ['Action', 'RPG', 'Roguelike', 'Action Roguelike'],
   },
   {
-    id: 2,
+    id: uuidV4(),
     name: 'Homeworld 3',
     description:
       'Tactical, beautiful, and wholly unique, the GOTY-winning sci-fi RTS returns with Homeworld 3. Assume control and battle through fleet combat in dazzling, fully 3D space while the award-winning story unfolds on a galactic scale.',
@@ -46,7 +48,7 @@ export const gameList = [
     tags: ['Space', 'Strategy', 'RTS', 'Story Rich', 'Sci-fi', '3D'],
   },
   {
-    id: 3,
+    id: uuidV4(),
     name: 'Elden Ring',
     description:
       'THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.',
@@ -72,5 +74,35 @@ export const gameList = [
     about:
       "<div className='about-game'><span className='text'>THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.</span><span className='about-heading'>A Vast World Full of Excitement</span><span className='text'>A vast world where open fields with a variety of situations and huge dungeons with complex and three-dimensional designs are seamlessly connected. As you explore, the joy of discovering unknown and overwhelming threats await you, leading to a high sense of accomplishment.</span></div>",
     tags: ['Souls-Like', 'Dark Fantasy', 'Open World', 'RPG'],
+  },
+];
+
+export const specialOffers = [
+  {
+    id: uuidV4(),
+    name: 'The Last of Us: Part 1',
+    price: '59.99',
+    discPrice: '47.99',
+    discAmount: '20',
+    endDate: 'Until Nov 2',
+    folderName: 'tlou-p1',
+  },
+  {
+    id: uuidV4(),
+    name: 'Iratus: Lord of the Dead',
+    price: '29.99',
+    discPrice: '3.89',
+    discAmount: '87',
+    endDate: 'Until Nov 6',
+    folderName: 'iratus',
+  },
+  {
+    id: uuidV4(),
+    name: 'Beyond: Two Souls',
+    price: '19.99',
+    discPrice: '7.99',
+    discAmount: '60',
+    endDate: 'Only Today!',
+    folderName: 'beyond-2-souls',
   },
 ];
