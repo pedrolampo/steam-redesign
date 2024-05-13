@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import './styles/store.css';
 
 import Button from '../components/Button/Button';
+import GameButton from '../components/GameButton/GameButton';
 import Carousel from 'react-bootstrap/Carousel';
 
-import { gameList, specialOffers, storeCategories } from '../utils/gameList';
+import {
+  gameList,
+  specialOffers,
+  storeCategories,
+  freeToPlay,
+} from '../utils/gameList';
 
 export default function Store() {
   const featuredGames = gameList.slice(0, 3);
@@ -243,6 +249,49 @@ export default function Store() {
                           alt={category.name}
                         />
                         <span className="category-title">{category.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>Free-to-Play Games</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
+          <div className="container free-to-play">
+            <Carousel pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="free-to-play-item">
+                    {freeToPlay.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/games/${game.folderName}/cover.png`}
+                          alt={game.name}
+                        />
+                        <div className="carousel-card-footer">
+                          <span className="game-title">{game.name}</span>
+                          <div className="footer-container">
+                            <img
+                              className="windows-logo"
+                              src={`media/images/windows-logo.png`}
+                              alt="windows logo"
+                            />
+                            <div className="play-btn-container">
+                              <span className="price">Free</span>
+                              <GameButton
+                                variant="play"
+                                text="Play Now"
+                                // hasIcon={false}
+                              />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>

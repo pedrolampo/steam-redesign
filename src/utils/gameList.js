@@ -129,3 +129,21 @@ export const storeCategories = [
     name: 'Co-Op',
   },
 ];
+
+export const freeToPlay = [
+  {
+    id: uuidV4(),
+    name: 'Destiny 2',
+    folderName: 'destiny-2',
+  },
+  {
+    id: uuidV4(),
+    name: 'Halo Infinite',
+    folderName: 'halo-infinite',
+  },
+  {
+    id: uuidV4(),
+    name: 'Team Fortress 2',
+    folderName: 'tf2',
+  },
+];

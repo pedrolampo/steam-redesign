@@ -296,6 +296,64 @@
   font-size: 1.25em;
 }
 
+/* FREE TO PLAY */
+.store .store-section .container.free-to-play {
+  height: auto;
+  padding: 1em 0;
+}
+.store .store-section .container.free-to-play .store-carousel {
+  background-color: transparent;
+}
+.store .store-section .container.free-to-play .free-to-play-item {
+  display: flex;
+  gap: 1em;
+}
+.store .store-section .container.free-to-play .carousel-card {
+  background-color: var(--bg-main);
+  padding: 1em;
+  border-radius: 5px;
+}
+.store .store-section .free-to-play .carousel-card img {
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+.store .store-section .free-to-play .carousel-card .carousel-card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1em;
+}
+.store .store-section .free-to-play .carousel-card .footer-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.store .store-section .free-to-play .carousel-card .footer-container img {
+  width: 8%;
+  margin: 0;
+}
+.store .store-section .free-to-play .carousel-card .play-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.store .store-section .free-to-play .carousel-card .price {
+  font-size: 0.85em;
+  color: var(--text-dim);
+}
+.store
+  .store-section
+  .free-to-play
+  .carousel-card
+  .play-btn-container
+  .game-button {
+  font-size: 0.9em;
+}
+
 @media screen and (max-width: 1700px) {
   .store .store-section {
     width: 90%;

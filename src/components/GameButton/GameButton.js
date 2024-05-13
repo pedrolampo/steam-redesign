@@ -1,14 +1,16 @@
 import React from 'react';
 import './GameButton.css';
 
-export default function GameButton({ variant, text }) {
+export default function GameButton({ variant, text, hasIcon }) {
   return (
     <div className={`game-button ${variant}`}>
-      <img
-        className="icon"
-        src={`media/images/${variant}-button.png`}
-        alt={`${variant} icon`}
-      />
+      {hasIcon && (
+        <img
+          className="icon"
+          src={`media/images/${variant}-button.png`}
+          alt={`${variant} icon`}
+        />
+      )}
       {text}
     </div>
   );
