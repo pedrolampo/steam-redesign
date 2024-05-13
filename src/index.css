@@ -35,7 +35,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/**** PAGES NAVBAR STYLES ****/
+/**** PAGES NAVBAR ****/
 div.navbar {
   height: 3.25em;
   background-color: var(--bg-tertiary);
@@ -89,4 +89,16 @@ div.navbar {
   height: 60%;
   top: 20%;
   right: 2%;
+}
+
+/* CAROUSEL INDICATORS */
+.carousel .carousel-indicators button {
+  background-color: var(--bg-main);
+  height: 0.4rem;
+  width: 2em;
+  border-radius: 20%/100%;
+  transition: none;
+}
+.carousel .carousel-indicators button.active {
+  background-color: var(--color-secondary);
 }

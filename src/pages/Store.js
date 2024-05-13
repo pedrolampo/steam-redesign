@@ -12,6 +12,10 @@ import {
   storeCategories,
   freeToPlay,
   recentlyUpdated,
+  newAndTrending,
+  topSellers,
+  under5,
+  streamedGames,
 } from '../utils/gameList';
 
 export default function Store() {
@@ -105,12 +109,13 @@ export default function Store() {
       </div>
 
       <div className="main-content">
+        {/* FEATURED */}
         <div className="store-section">
           <div className="store-section-header">
             <h4>FEATURED</h4>
           </div>
           <div className="container featured">
-            <Carousel pause="hover" className="store-carousel">
+            <Carousel interval={3000} pause="hover" className="store-carousel">
               {featuredGames.map((game) => (
                 <Carousel.Item key={game.id}>
                   <div className="carousel-item-container">
@@ -181,6 +186,7 @@ export default function Store() {
           </div>
         </div>
 
+        {/* SPECIAL OFFERS */}
         <div className="store-section">
           <div className="store-section-header">
             <h4>Special Offers</h4>
@@ -233,13 +239,14 @@ export default function Store() {
           </div>
         </div>
 
+        {/* CATEGORIES */}
         <div className="store-section">
           <div className="store-section-header">
             <h4>Browse Steam</h4>
             <Button variant="tertiary" text="See more" />
           </div>
           <div className="container categories">
-            <Carousel pause="hover" className="store-carousel">
+            <Carousel interval={null} className="store-carousel">
               {cateogriesCarouselQty.map((qty) => (
                 <Carousel.Item key={qty}>
                   <div className="categories-item">
@@ -259,10 +266,11 @@ export default function Store() {
           </div>
         </div>
 
+        {/* FREE-TO-PLAY */}
         <div className="store-section">
           <div className="store-section-header">
             <h4>Free-to-Play Games</h4>
-            <Button variant="tertiary" text="See more" />
+            <Button interval={2500} variant="tertiary" text="See more" />
           </div>
           <div className="container free-to-play">
             <Carousel pause="hover" className="store-carousel">
@@ -302,13 +310,14 @@ export default function Store() {
           </div>
         </div>
 
+        {/* RECENTLY UPDT */}
         <div className="store-section">
           <div className="store-section-header">
             <h4>Recently Updated</h4>
             <Button variant="tertiary" text="See more" />
           </div>
           <div className="container recently-updated">
-            <Carousel pause="hover" className="store-carousel">
+            <Carousel interval={3000} pause="hover" className="store-carousel">
               {specialOffersCarouselQty.map((qty) => (
                 <Carousel.Item key={qty}>
                   <div className="recently-updated-item">
@@ -327,6 +336,217 @@ export default function Store() {
                             <div className="btns-container">
                               <Button variant="tertiary" text="In Wishlist" />
                               <Button variant="secondary" text="View Updates" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        {/* NEW & TRENDING */}
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>New & Trending</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
+          <div className="container trending">
+            <Carousel pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="trending-item">
+                    {newAndTrending.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/games/${game.folderName}/cover.png`}
+                          alt={game.name}
+                        />
+                        <div className="carousel-card-footer">
+                          <span className="game-title">{game.name}</span>
+                          <div className="footer-container">
+                            <img
+                              className="windows-logo"
+                              src={`media/images/windows-logo.png`}
+                              alt="windows logo"
+                            />
+                            <div className="play-btn-container">
+                              <span className="price">${game.price}</span>
+                              <Button
+                                variant="secondary"
+                                text=""
+                                extra="wishlistHeartEmpty"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        {/* TOP SELLERS */}
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>Top Sellers</h4>
+            <Button interval={4000} variant="tertiary" text="See more" />
+          </div>
+          <div className="container top-sellers">
+            <Carousel pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="top-sellers-item">
+                    {topSellers.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/top-sellers/${game.imgName}.png`}
+                          alt={`${game.name}`}
+                        />
+                        <div className="game-info">
+                          <span className="game-name">{game.name}</span>
+                          <div className="game-info-footer">
+                            <img
+                              className="windows-logo"
+                              src={`media/images/windows-logo.png`}
+                              alt="windows logo"
+                            />
+                            {!game.discPrice ? (
+                              <div className="price-container">
+                                <span>${game.price}</span>
+                                <Button
+                                  variant="secondary"
+                                  text=""
+                                  extra="wishlistHeartEmpty"
+                                />
+                              </div>
+                            ) : (
+                              <div className="price-container">
+                                <span className="disc-amount">
+                                  -{game.discAmount}%
+                                </span>
+                                <div className="disc-container">
+                                  <span className="price">${game.price}</span>
+                                  <span className="disc-price">
+                                    ${game.discPrice}
+                                  </span>
+                                </div>
+                                <Button
+                                  variant="secondary"
+                                  text=""
+                                  extra="wishlistHeartEmpty"
+                                />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        {/* UNDER $5 */}
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>Under $5</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
+          <div className="container under-5">
+            <Carousel interval={3000} pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="under-5-item">
+                    {under5.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/games/${game.folderName}/cover.png`}
+                          alt={game.name}
+                        />
+                        <div className="carousel-card-footer">
+                          <span className="game-title">{game.name}</span>
+                          <div className="footer-container">
+                            <img
+                              className="windows-logo"
+                              src={`media/images/windows-logo.png`}
+                              alt="windows logo"
+                            />
+                            <div className="dct-container">
+                              <span className="end-date">{game.endDate}</span>
+                              <span className="disc-amount">
+                                -{game.discAmount}%
+                              </span>
+                              <div className="price-container">
+                                <span className="price">${game.price}</span>
+                                <span className="disc-price">
+                                  ${game.discPrice}
+                                </span>
+                              </div>
+                              <Button
+                                variant="secondary"
+                                text=""
+                                extra="wishlistHeartEmpty"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        {/* STREAMS */}
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>Games Streaming Now</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
+          <div className="container store-streams">
+            <Carousel pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="store-streams-item">
+                    {streamedGames.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/streams/${game.fileName}.png`}
+                          alt={game.name}
+                        />
+                        <div className="carousel-card-footer">
+                          <span className="game-title">{game.name}</span>
+                          <div className="footer-container">
+                            <div className="viewers-container">
+                              <svg
+                                width="26"
+                                height="20"
+                                viewBox="0 0 23 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M11.75 0.5C6.75 0.5 2.48 3.61 0.75 8C2.48 12.39 6.75 15.5 11.75 15.5C16.75 15.5 21.02 12.39 22.75 8C21.02 3.61 16.75 0.5 11.75 0.5ZM11.75 13C8.99 13 6.75 10.76 6.75 8C6.75 5.24 8.99 3 11.75 3C14.51 3 16.75 5.24 16.75 8C16.75 10.76 14.51 13 11.75 13ZM11.75 5C10.09 5 8.75 6.34 8.75 8C8.75 9.66 10.09 11 11.75 11C13.41 11 14.75 9.66 14.75 8C14.75 6.34 13.41 5 11.75 5Z"
+                                  fill="#66C0F4"
+                                />
+                              </svg>
+                              <span className="viewers">
+                                ${game.viewersAmount}K
+                              </span>
+                            </div>
+                            <div className="play-btn-container">
+                              <Button variant="secondary" text="Store Page" />
                             </div>
                           </div>
                         </div>

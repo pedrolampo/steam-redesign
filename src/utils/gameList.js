@@ -178,3 +178,118 @@ export const recentlyUpdated = [
     folderName: 'new-world',
   },
 ];
+
+export const newAndTrending = [
+  {
+    id: uuidV4(),
+    name: 'Cities Skylines II',
+    price: '49.99',
+    folderName: 'cities-sky-2',
+  },
+  {
+    id: uuidV4(),
+    name: 'Wildmender',
+    price: '24.99',
+    folderName: 'wildmender',
+  },
+  {
+    id: uuidV4(),
+    name: 'The Bloodline',
+    price: '19.99',
+    folderName: 'the-bloodline',
+  },
+];
+
+export const topSellers = [
+  {
+    id: uuidV4(),
+    name: "Baldur's Gate 3",
+    price: '59.99',
+    imgName: 'baldurs-gate-3',
+  },
+  {
+    id: uuidV4(),
+    name: 'Rust',
+    price: '39.99',
+    imgName: 'rust',
+  },
+  {
+    id: uuidV4(),
+    name: 'Call of Duty®',
+    price: '69.99',
+    imgName: 'cod-mw3',
+  },
+  {
+    id: uuidV4(),
+    name: 'Fallout 76',
+    price: '39.99',
+    discPrice: '7.99',
+    discAmount: '80',
+    imgName: 'fallout-76',
+  },
+  {
+    id: uuidV4(),
+    name: 'Metal Gear & Metal Gear 2: Solid Snake',
+    price: '19.99',
+    imgName: 'metal-gear-1-2',
+  },
+  {
+    id: uuidV4(),
+    name: 'Red Dead Redemption 2',
+    price: '59.99',
+    discPrice: '23.99',
+    discAmount: '60',
+    imgName: 'rdr2',
+  },
+];
+
+export const under5 = [
+  {
+    id: uuidV4(),
+    name: 'American Truck Simulator',
+    price: '19.99',
+    discPrice: '4.99',
+    discAmount: '75',
+    endDate: 'Until Oct 31',
+    folderName: 'american-truck-sim',
+  },
+  {
+    id: uuidV4(),
+    name: 'Batman: Arkham Knight',
+    price: '19.99',
+    discPrice: '3.99',
+    discAmount: '80',
+    endDate: 'Until Nov 6',
+    folderName: 'batman-arkham',
+  },
+  {
+    id: uuidV4(),
+    name: 'Mortal Kombat 11',
+    price: '49.99',
+    discPrice: '4.99',
+    discAmount: '90',
+    endDate: 'Until Oct 28',
+    folderName: 'mortal-kombat-11',
+  },
+];
+
+export const streamedGames = [
+  {
+    id: uuidV4(),
+    name: 'Cities Skylines II',
+    viewersAmount: '35',
+    fileName: 'cities-sky-2',
+  },
+  {
+    id: uuidV4(),
+    name: 'Warhammer: Vermintide II',
+    viewersAmount: '10',
+    fileName: 'warhammer-2',
+  },
+  {
+    id: uuidV4(),
+    name: 'Euro Truck Simulator 2',
+    viewersAmount: '20',
+    fileName: 'euro-truck-sim',
+  },
+];
