@@ -2,8 +2,10 @@ import React from 'react';
 import './StoreBrowse.css';
 
 import { Carousel } from 'react-bootstrap';
+import Accordion from '../Accordion/Accordion';
 
 import { storeCategories } from '../../utils/gameList';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function StoreBrowse() {
   return (
@@ -105,6 +107,84 @@ export default function StoreBrowse() {
                   RPG <span>&#10005;</span>
                 </span>
               </div>
+
+              <span className="divider"></span>
+
+              <Accordion
+                title="Top-Level Genres"
+                items={[
+                  { id: uuidv4(), name: 'Adventure', qty: '5,000' },
+                  { id: uuidv4(), name: 'Casual', qty: '5,000' },
+                  { id: uuidv4(), name: 'RPG', qty: '5,000' },
+                  { id: uuidv4(), name: 'Strategy', qty: '5,000' },
+                  { id: uuidv4(), name: 'Simulation', qty: '5,000' },
+                  { id: uuidv4(), name: 'Free-to-Play', qty: '5,000' },
+                  { id: uuidv4(), name: 'Shooter', qty: '5,000' },
+                  { id: uuidv4(), name: 'Action', qty: '5,000' },
+                ]}
+              />
+
+              <span className="divider"></span>
+
+              <Accordion
+                title="Genres"
+                items={[
+                  { id: uuidv4(), name: 'JRPG', qty: '5,000' },
+                  { id: uuidv4(), name: 'Sandbox', qty: '5,000' },
+                  { id: uuidv4(), name: 'Rogue-Like', qty: '5,000' },
+                  { id: uuidv4(), name: 'Platformer', qty: '5,000' },
+                  { id: uuidv4(), name: 'Arcade & Rhythm', qty: '5,000' },
+                  {
+                    id: uuidv4(),
+                    name: 'Fighting & Martial Arts',
+                    qty: '5,000',
+                  },
+                  { id: uuidv4(), name: 'First-Person Shooter', qty: '5,000' },
+                  { id: uuidv4(), name: 'Hack & Slash', qty: '5,000' },
+                  { id: uuidv4(), name: 'Platformer & Runner', qty: '5,000' },
+                  { id: uuidv4(), name: 'Third-Person Shooter', qty: '5,000' },
+                  { id: uuidv4(), name: 'schnmup', qty: '5,000' },
+                  { id: uuidv4(), name: 'Action RPG', qty: '5,000' },
+                  { id: uuidv4(), name: 'Adventure RPG', qty: '5,000' },
+                  { id: uuidv4(), name: 'Party-Based', qty: '5,000' },
+                  { id: uuidv4(), name: 'Strategy RPG', qty: '5,000' },
+                  { id: uuidv4(), name: 'Turn-Based', qty: '5,000' },
+                  { id: uuidv4(), name: 'Card & Board', qty: '5,000' },
+                ]}
+              />
+
+              <span className="divider"></span>
+              <Accordion title="Sub-genres" />
+
+              <span className="divider"></span>
+              <Accordion title="Visuals & Viewpoint" />
+
+              <span className="divider"></span>
+              <Accordion title="Themes & Moods" />
+
+              <span className="divider"></span>
+              <Accordion title="Features" />
+
+              <span className="divider"></span>
+              <Accordion title="Players" />
+
+              <span className="divider"></span>
+              <Accordion title="Platform" />
+
+              <span className="divider"></span>
+              <Accordion title="Language" />
+
+              <span className="divider"></span>
+              <Accordion title="Price" />
+
+              <span className="divider"></span>
+              <Accordion title="Achievements" />
+
+              <span className="divider"></span>
+              <Accordion title="Trading Cards" />
+
+              <span className="divider"></span>
+              <Accordion title="Items" />
             </div>
 
             <div className="game-list"></div>
