@@ -147,3 +147,34 @@ export const freeToPlay = [
     folderName: 'tf2',
   },
 ];
+
+export const recentlyUpdated = [
+  {
+    id: uuidV4(),
+    name: 'Cyberpunk 2077',
+    description:
+      'The free Update 2.0 brings brand new ways to play Cyberpunk 2077...',
+    folderName: 'cp2077',
+  },
+  {
+    id: uuidV4(),
+    name: 'Starfield',
+    description:
+      'A new updated has been released for Starfield on all platforms...',
+    folderName: 'starfield',
+  },
+  {
+    id: uuidV4(),
+    name: 'The Elder Scrolls® Online',
+    description:
+      "Conquer Tamriel's Fears and Earn Special Rewards during the Witches Festival Event...",
+    folderName: 'teso',
+  },
+  {
+    id: uuidV4(),
+    name: 'New World',
+    description:
+      'Nightveil Hallow returns as Baalphazu, Marquis of Terror rises once again on October 18...',
+    folderName: 'new-world',
+  },
+];

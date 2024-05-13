@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameButton.css';
 
-export default function GameButton({ variant, text, hasIcon }) {
+export default function GameButton({ variant, text, hasIcon = true }) {
   return (
     <div className={`game-button ${variant}`}>
       {hasIcon && (

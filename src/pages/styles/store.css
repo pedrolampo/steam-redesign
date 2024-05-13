@@ -354,6 +354,62 @@
   font-size: 0.9em;
 }
 
+/* RECENTLY UPDATED */
+.store .store-section .container.recently-updated {
+  height: auto;
+  padding: 1em 0;
+}
+.store .store-section .container.recently-updated .store-carousel {
+  background-color: transparent;
+}
+.store .store-section .container.recently-updated .recently-updated-item {
+  display: flex;
+  gap: 0.75em;
+}
+.store .store-section .container.recently-updated .carousel-card {
+  background-color: var(--bg-main);
+  padding: 1em;
+  width: 100%;
+  border-radius: 5px;
+}
+.store .store-section .recently-updated .carousel-card img {
+  width: 100%;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+.store .store-section .recently-updated .carousel-card .carousel-card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  height: 50%;
+  gap: 1em;
+}
+.store .store-section .recently-updated .carousel-card .footer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5em;
+  font-size: 0.8em;
+}
+.store .store-section .recently-updated .carousel-card .btns-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+.store .store-section .recently-updated .carousel-card .btns-container .button {
+  width: 100%;
+  max-width: 100%;
+}
+.store .store-section .recently-updated .carousel-card .btns-container button {
+  padding: 0.5em 0.45em;
+  width: 100%;
+  color: var(--text-main);
+}
+
 @media screen and (max-width: 1700px) {
   .store .store-section {
     width: 90%;
@@ -370,5 +426,14 @@
   .store .carousel-item-container .carousel-footer .button button {
     font-size: 0.9em;
     padding: 0.75em 1.35em;
+  }
+
+  .store
+    .store-section
+    .recently-updated
+    .carousel-card
+    .btns-container
+    .button {
+    max-width: fit-content;
   }
 }

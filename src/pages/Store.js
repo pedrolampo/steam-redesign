@@ -11,6 +11,7 @@ import {
   specialOffers,
   storeCategories,
   freeToPlay,
+  recentlyUpdated,
 } from '../utils/gameList';
 
 export default function Store() {
@@ -287,8 +288,45 @@ export default function Store() {
                               <GameButton
                                 variant="play"
                                 text="Play Now"
-                                // hasIcon={false}
+                                hasIcon={false}
                               />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
+        </div>
+
+        <div className="store-section">
+          <div className="store-section-header">
+            <h4>Recently Updated</h4>
+            <Button variant="tertiary" text="See more" />
+          </div>
+          <div className="container recently-updated">
+            <Carousel pause="hover" className="store-carousel">
+              {specialOffersCarouselQty.map((qty) => (
+                <Carousel.Item key={qty}>
+                  <div className="recently-updated-item">
+                    {recentlyUpdated.map((game) => (
+                      <div key={game.id} className="carousel-card">
+                        <img
+                          src={`media/images/updates/${game.folderName}/update.png`}
+                          alt={game.name}
+                        />
+                        <div className="carousel-card-footer">
+                          <span className="game-title">{game.name}</span>
+                          <div className="footer-container">
+                            <span className="update-description">
+                              {game.description}
+                            </span>
+                            <div className="btns-container">
+                              <Button variant="tertiary" text="In Wishlist" />
+                              <Button variant="secondary" text="View Updates" />
                             </div>
                           </div>
                         </div>
