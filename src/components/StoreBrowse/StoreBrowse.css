@@ -16,6 +16,9 @@
   justify-content: center;
   align-items: center;
   padding-top: 4em;
+  background: url('/public/media/images/backgrounds/store-browse.png') no-repeat
+    center;
+  /* background-position: -15% 0%; */
 }
 .store-browse .main-content .container {
   display: flex;
@@ -26,7 +29,11 @@
   max-width: 100%;
   border-radius: 3px;
 }
+.store-browse .store-section {
+  width: 70%;
+}
 
+/* CATEGORIES CAROUSEL */
 .store-browse .store-carousel {
   background-color: var(--bg-main);
   width: 90%;
@@ -90,4 +97,77 @@
   position: absolute;
   font-weight: 500;
   font-size: 1.25em;
+}
+
+.store .store-section.browse-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.store-browse h4 {
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+
+/* TOP FILTER BAR */
+.store-browse .filter-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-main);
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+.store-browse .filter-top-bar .filter-view {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  color: var(--text-dim);
+}
+.store-browse .filter-top-bar .filter-view img {
+  width: 2.4em;
+  cursor: pointer;
+}
+.store-browse .top-filter-options {
+  display: flex;
+  color: var(--text-dim);
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+}
+.store-browse .top-filter-options .top-filter-option {
+  border-radius: 3px;
+  padding: 0.5em 0.75em;
+  cursor: pointer;
+}
+.store-browse .top-filter-options .top-filter-option:hover {
+  color: var(--text-main);
+}
+.store-browse .top-filter-options .top-filter-option.active {
+  background-color: var(--bg-hover);
+  color: var(--text-main);
+}
+
+.store-browse .main-browse-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+/* SIDE FILTERS BAR */
+.store-browse .side-filters {
+  background-color: var(--bg-main);
+  border-radius: 5px;
+  width: 30%;
+  height: 50em;
+  padding: 0.5em;
+}
+
+/* GAME LIST */
+.store-browse .game-list {
+  background-color: var(--bg-main);
+  border-radius: 5px;
+  width: 100%;
+  height: 50em;
 }

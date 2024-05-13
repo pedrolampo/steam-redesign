@@ -9,12 +9,12 @@ export default function Footer() {
           <img
             className="footer-logo"
             alt="valve logo"
-            src="media/images/valve-logo.png"
+            src="/media/images/valve-logo.png"
           />
           <img
             className="footer-logo"
             alt="steam logo"
-            src="media/images/steam-logo-big-grey.png"
+            src="/media/images/steam-logo-big-grey.png"
           />
         </div>
         <span>
@@ -44,8 +44,8 @@ export default function Footer() {
       </div>
 
       <div className="footer-container socials">
-        <img alt="facebook logo" src="media/images/fb-logo.png" />
-        <img alt="twitter logo" src="media/images/tw-logo.png" />
+        <img alt="facebook logo" src="/media/images/fb-logo.png" />
+        <img alt="twitter logo" src="/media/images/tw-logo.png" />
       </div>
     </div>
   );

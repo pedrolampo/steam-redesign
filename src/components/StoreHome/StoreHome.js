@@ -26,7 +26,7 @@ export default function StoreHome() {
   return (
     <div className="store-home">
       <div className="store-banner">
-        <img alt="store banner" src="media/images/store-banner.png" />
+        <img alt="store banner" src="/media/images/store-banner.png" />
       </div>
 
       <div className="main-content">
@@ -164,7 +164,9 @@ export default function StoreHome() {
         <div className="store-section">
           <div className="store-section-header">
             <h4>Browse Steam</h4>
-            <Button variant="tertiary" text="See more" />
+            <Link to="/store/browse">
+              <Button variant="tertiary" text="See more" />
+            </Link>
           </div>
           <div className="container categories">
             <Carousel interval={null} className="store-carousel">

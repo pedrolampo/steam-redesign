@@ -1,14 +1,11 @@
 import React from 'react';
+import './StoreBrowse.css';
 
 import { Carousel } from 'react-bootstrap';
-import Button from '../Button/Button';
 
 import { storeCategories } from '../../utils/gameList';
 
-import './StoreBrowse.css';
-
 export default function StoreBrowse() {
-  console.log(storeCategories);
   return (
     <div className="store-browse">
       <div className="main-content">
@@ -30,6 +27,41 @@ export default function StoreBrowse() {
                 </div>
               </Carousel.Item>
             </Carousel>
+          </div>
+        </div>
+
+        <div className="store-section browse-content">
+          <h4>Browse Steam</h4>
+
+          <div className="filter-top-bar">
+            <div className="filter-view">
+              <span>View</span>
+              <img
+                src="/media/images/icons/list-view-icon.png"
+                alt="list view icon"
+              />
+              <img
+                src="/media/images/icons/box-view-icon.png"
+                alt="box view icon"
+              />
+            </div>
+
+            <div className="top-filter-options">
+              <span className="top-filter-option active">All Items</span>
+              <span className="top-filter-option">New and Trending</span>
+              <span className="top-filter-option">Top Sellers</span>
+              <span className="top-filter-option">Top Rated</span>
+              <span className="top-filter-option">Discounted</span>
+              <span className="top-filter-option">Popular</span>
+              <span className="top-filter-option">Coming Soon</span>
+              <span className="top-filter-option">On Wishlist</span>
+              <span className="top-filter-option">Upcoming Events</span>
+            </div>
+          </div>
+
+          <div className="main-browse-content">
+            <div className="side-filters"></div>
+            <div className="game-list"></div>
           </div>
         </div>
       </div>

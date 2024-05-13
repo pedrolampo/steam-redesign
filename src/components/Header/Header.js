@@ -53,21 +53,21 @@ export default function Header({ user }) {
       </div>
       <div className="user-section">
         <div className="user-section-button friends-button">
-          <img alt="friends icon" src="media/images/friends-icon.png" />
+          <img alt="friends icon" src="/media/images/friends-icon.png" />
         </div>
         <div className="user-section-button notifications-button">
-          <img alt="notifications icon" src="media/images/notif-icon.png" />
+          <img alt="notifications icon" src="/media/images/notif-icon.png" />
         </div>
         <div className="user-section-button user-button">
           <img
             className="profile-picture"
             alt="profile"
-            src="media/images/profile-picture.jpg"
+            src="/media/images/profile-picture.jpg"
           />
           {user.username} <span className="wallet-funds">$4.20</span>
           <img
             alt="dropdown arrow icon"
-            src="media/images/dropdown-arrow.png"
+            src="/media/images/dropdown-arrow.png"
           />
         </div>
         <Link to="/support" className="help">
@@ -77,7 +77,7 @@ export default function Header({ user }) {
           View
           <img
             alt="dropdown arrow"
-            src="media/images/dropdown-arrow-grey.png"
+            src="/media/images/dropdown-arrow-grey.png"
           />
         </div>
       </div>

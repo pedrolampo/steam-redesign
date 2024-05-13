@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 1700px) {
   .store .store-section {
-    width: 90%;
+    width: 90% !important;
   }
   .store .store-section .container {
     height: 27.5em;
