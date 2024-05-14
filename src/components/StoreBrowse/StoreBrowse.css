@@ -209,6 +209,7 @@
   height: 60%;
   top: 20%;
   right: 2%;
+  cursor: pointer;
 }
 
 .store-browse .filter-tags-container {
