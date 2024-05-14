@@ -185,6 +185,9 @@
   width: 2em;
   cursor: pointer;
 }
+.store-browse .side-filters .side-filter-title img:hover {
+  filter: brightness(2);
+}
 
 .store-browse .search-container {
   position: relative;
@@ -227,6 +230,9 @@
   margin-left: 0.4em;
   color: var(--text-dim);
   cursor: pointer;
+}
+.store-browse .filter-tags-container .filter-tag span:hover {
+  color: var(--text-main);
 }
 
 /* GAME LIST */

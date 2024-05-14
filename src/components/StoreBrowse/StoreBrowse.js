@@ -108,6 +108,7 @@ export default function StoreBrowse() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     addTag(e.target[0].value);
+                    e.target[0].value = '';
                   }}
                 >
                   <input
@@ -243,7 +244,7 @@ export default function StoreBrowse() {
                   price: '19.99',
                   dsctPrice: '4.99',
                   dsctAmount: '75',
-                  dsctEndDate: 'October 31',
+                  dsctEndDate: 'Until Oct 31',
                   reviews: {
                     positive: '80%',
                     negative: '20%',
