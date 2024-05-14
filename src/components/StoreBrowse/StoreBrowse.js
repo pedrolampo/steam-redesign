@@ -230,7 +230,7 @@ export default function StoreBrowse() {
 
             <div className="game-list">
               {games.map((game) => (
-                <BrowseCard game={game} />
+                <BrowseCard key={game.id} game={game} />
               ))}
             </div>
           </div>

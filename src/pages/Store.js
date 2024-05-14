@@ -4,6 +4,7 @@ import './styles/store.css';
 
 import StoreHome from '../components/StoreHome/StoreHome';
 import StoreBrowse from '../components/StoreBrowse/StoreBrowse';
+import StoreDiscover from '../components/StoreDiscover/StoreDiscover';
 
 export default function Store() {
   const { pathname } = useLocation();
@@ -21,6 +22,9 @@ export default function Store() {
 
       case '/store/browse':
         return <StoreBrowse />;
+
+      case '/store/discover':
+        return <StoreDiscover />;
 
       default:
         return;

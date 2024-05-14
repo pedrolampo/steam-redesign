@@ -31,12 +31,12 @@
 }
 
 .button.tertiary button {
-  border: 1px solid var(--text-dim);
+  border: 1px solid #383d43;
   color: var(--text-dim);
   background-color: transparent;
 }
 .button.tertiary:hover button {
-  border: 1px solid var(--text-main);
+  border: 1px solid var(--text-dim);
   color: var(--text-main);
   background-color: transparent;
 }

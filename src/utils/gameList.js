@@ -296,6 +296,24 @@ export const streamedGames = [
 
 export const games = [
   {
+    id: uuidV4(),
+    name: 'Elden Ring',
+    folderName: 'elden-ring',
+    tags: ['Souls-Like', 'RPG', 'Dark Fantasy', 'Open World'],
+    releaseDate: 'Aug 21, 2021',
+    isDiscounted: true,
+    price: '59.99',
+    dsctPrice: '41.99',
+    dsctAmount: '30',
+    dsctEndDate: 'Until July 13',
+    reviews: {
+      positive: '90%',
+      negative: '10%',
+      amount: '25,753',
+    },
+  },
+  {
+    id: uuidV4(),
     name: 'Fallout 4',
     folderName: 'fallout-4',
     tags: ['Open-World', 'Post-apocalyptic', 'Single-Player', 'Exploration'],
@@ -312,6 +330,7 @@ export const games = [
     },
   },
   {
+    id: uuidV4(),
     name: "Tom Clancy's The Division 2",
     folderName: 'the-division-2',
     tags: ['Multiplayer', 'Action', 'Third-Person Shooter', 'Looter Shooter'],

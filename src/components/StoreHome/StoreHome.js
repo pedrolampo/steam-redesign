@@ -56,19 +56,19 @@ export default function StoreHome() {
                       <div className="carousel-about-imgs">
                         <img
                           alt={`${game.name} 1`}
-                          src={`media/images/games/${game.folderName}/1.jpg`}
+                          src={`media/images/games/${game.folderName}/store-1.jpg`}
                         />
                         <img
                           alt={`${game.name} 2`}
-                          src={`media/images/games/${game.folderName}/2.jpg`}
+                          src={`media/images/games/${game.folderName}/store-2.jpg`}
                         />
                         <img
                           alt={`${game.name} 3`}
-                          src={`media/images/games/${game.folderName}/3.jpg`}
+                          src={`media/images/games/${game.folderName}/store-3.jpg`}
                         />
                         <img
                           alt={`${game.name} 4`}
-                          src={`media/images/games/${game.folderName}/4.jpg`}
+                          src={`media/images/games/${game.folderName}/store-4.jpg`}
                         />
                       </div>
 
