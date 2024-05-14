@@ -37,7 +37,7 @@ export default function BrowseCard({ game }) {
         <Button text="" variant="secondary" extra="wishlistHeartEmpty" />
 
         {game.isDiscounted ? (
-          <div className="price-info">
+          <div className="price-info discounted">
             <span className="end-date">{game.dsctEndDate}</span>
             <span className="disc-amount">-{game.dsctAmount}%</span>
             <div className="price-container">

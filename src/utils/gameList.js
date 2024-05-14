@@ -293,3 +293,38 @@ export const streamedGames = [
     fileName: 'euro-truck-sim',
   },
 ];
+
+export const games = [
+  {
+    name: 'Fallout 4',
+    folderName: 'fallout-4',
+    tags: ['Open-World', 'Post-apocalyptic', 'Single-Player', 'Exploration'],
+    releaseDate: 'Nov 10, 2015',
+    isDiscounted: true,
+    price: '19.99',
+    dsctPrice: '4.99',
+    dsctAmount: '75',
+    dsctEndDate: 'Until Oct 31',
+    reviews: {
+      positive: '80%',
+      negative: '20%',
+      amount: '207,000',
+    },
+  },
+  {
+    name: "Tom Clancy's The Division 2",
+    folderName: 'the-division-2',
+    tags: ['Multiplayer', 'Action', 'Third-Person Shooter', 'Looter Shooter'],
+    releaseDate: 'Jan 12, 2023',
+    isDiscounted: false,
+    price: '29.99',
+    dsctPrice: '',
+    dsctAmount: '',
+    dsctEndDate: '',
+    reviews: {
+      positive: '55%',
+      negative: '45%',
+      amount: '9,500',
+    },
+  },
+];

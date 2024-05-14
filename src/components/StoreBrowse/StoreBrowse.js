@@ -4,7 +4,7 @@ import './StoreBrowse.css';
 import { Carousel } from 'react-bootstrap';
 import Accordion from '../Accordion/Accordion';
 
-import { storeCategories } from '../../utils/gameList';
+import { games, storeCategories } from '../../utils/gameList';
 import { v4 as uuidv4 } from 'uuid';
 import BrowseCard from '../BrowseCard/BrowseCard';
 
@@ -229,29 +229,9 @@ export default function StoreBrowse() {
             </div>
 
             <div className="game-list">
-              <BrowseCard
-                game={{
-                  name: 'Fallout 4',
-                  folderName: 'fallout-4',
-                  tags: [
-                    'Open-World',
-                    'Post-apocalyptic',
-                    'Single-Player',
-                    'Exploration',
-                  ],
-                  releaseDate: 'Nov 10, 2015',
-                  isDiscounted: true,
-                  price: '19.99',
-                  dsctPrice: '4.99',
-                  dsctAmount: '75',
-                  dsctEndDate: 'Until Oct 31',
-                  reviews: {
-                    positive: '80%',
-                    negative: '20%',
-                    amount: '207,000',
-                  },
-                }}
-              />
+              {games.map((game) => (
+                <BrowseCard game={game} />
+              ))}
             </div>
           </div>
         </div>
