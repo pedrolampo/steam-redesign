@@ -231,8 +231,10 @@
 
 /* GAME LIST */
 .store-browse .game-list {
-  background-color: var(--bg-main);
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   width: 100%;
-  height: 50em;
+  height: auto;
+  gap: 1em;
 }

@@ -1,0 +1,86 @@
+.browse-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-main);
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.75em;
+  height: 9em;
+  cursor: pointer;
+}
+/* .browse-card:hover {
+  background-color: var(--bg-hover);
+} */
+
+.browse-card .info-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  height: 100%;
+}
+.browse-card .info-container > img {
+  max-height: 100%;
+}
+
+.browse-card .main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.browse-card .info-container .game-title {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.browse-card .info-container .game-tags {
+  display: flex;
+  gap: 0.25em;
+}
+.browse-card .game-tags .game-tag {
+  background-color: var(--bg-highlight);
+  color: var(--text-dim);
+  font-size: 0.6em;
+  padding: 0.35em 0.6em;
+  border-radius: 3px;
+}
+
+.browse-card .platform-release {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.browse-card .platform-release img {
+  width: 1.35em;
+}
+.browse-card .platform-release .release-date {
+  font-size: 0.7em;
+  color: var(--text-dim);
+}
+
+.browse-card .price-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+.browse-card .price-container .button.secondary button {
+  padding: 0.1em 0.3em;
+}
+.browse-card .price-container .button.secondary button svg {
+  width: 20px;
+}
+
+.browse-card .price-container .price-info {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5em;
+}
+.browse-card .price-container .price-info button {
+  font-size: 0.9em;
+  padding: 0.35em 0.6em;
+}

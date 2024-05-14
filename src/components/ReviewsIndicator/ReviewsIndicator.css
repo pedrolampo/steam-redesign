@@ -1,0 +1,51 @@
+.reviews-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  min-width: max-content;
+}
+
+.reviews-indicator .indicators-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+}
+.reviews-indicator .indicators-container .numeric-reviews {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7em;
+  color: var(--accent-red);
+}
+.reviews-indicator .indicators-container .numeric-reviews :first-child {
+  color: var(--color-primary);
+}
+
+.reviews-indicator .indicators-container .visual-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15em;
+  min-width: 8em;
+}
+.reviews-indicator .indicators-container .positive-indicator {
+  width: var(--positive-reviews);
+  height: 0.25em;
+  background-color: var(--color-primary);
+  border-radius: 50em;
+}
+.reviews-indicator .indicators-container .negative-indicator {
+  width: var(--negative-reviews);
+  height: 0.25em;
+  background-color: var(--accent-red);
+  border-radius: 50em;
+}
+
+.reviews-indicator .reviews-amount {
+  width: 100%;
+  font-size: 0.85em;
+  min-width: max-content;
+  color: var(--color-secondary);
+}
