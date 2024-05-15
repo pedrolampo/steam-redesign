@@ -69,7 +69,7 @@ export default function StorePointsShop() {
               <h5>Steam Scream 2023 Items</h5>
 
               <div>
-                {[1, 2, 3].map((item) => (
+                {[1, 2, 3, 4].map((item) => (
                   <div key={item} className="points-card">
                     <img
                       alt="point shop item"

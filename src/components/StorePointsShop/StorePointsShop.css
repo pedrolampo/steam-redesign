@@ -130,13 +130,13 @@
   background: url('/public/media/images/points-shop/scream-bg.png');
   max-width: 100%;
   border-radius: 3px;
-  height: 30em;
+  height: 27em;
   gap: 1em;
 }
 .store-points-shop .points-items-container .points-items-section > div {
   display: flex;
   justify-content: space-evenly;
-  gap: 1.5em;
+  gap: 1em;
 }
 
 .store-points-shop .points-items-container .points-items-section .points-card {
@@ -147,7 +147,7 @@
   justify-content: space-evenly;
   gap: 0.5em;
   background-color: var(--bg-highlight);
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
 }
