@@ -211,6 +211,26 @@
   color: var(--color-primary);
 }
 
+.user-section .friends-dropdown {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  width: 21em;
+  height: 15em;
+  z-index: 999;
+  border-radius: 3px;
+  background-color: var(--bg-highlight);
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+  cursor: auto;
+
+  display: none;
+}
+.user-section .friends-dropdown.show {
+  display: flex;
+}
+
 .user-section .help {
   color: var(--text-dim);
   cursor: pointer;

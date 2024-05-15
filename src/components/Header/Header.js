@@ -93,8 +93,32 @@ export default function Header({ user }) {
       </div>
 
       <div className="user-section">
-        <div className="user-section-button friends-button">
+        <div
+          onClick={() => {
+            setNotifDropDownShow(false);
+            setUserDropDownShow(false);
+            setFriendsDropDownShow((prev) => !prev);
+          }}
+          className="user-section-button friends-button"
+        >
           <img alt="friends icon" src="/media/images/friends-icon.png" />
+
+          <div
+            onClick={() => {
+              return;
+            }}
+            className={`friends-dropdown dropdown ${
+              friendsDropdownShow && 'show'
+            }`}
+          >
+            <div className="notif-drop-header"></div>
+
+            <div className="friends-drop-body">
+              <div className="friends-drop-tab">
+                <div className="friends-header"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div
