@@ -3,6 +3,7 @@ import './DiscoverCard.css';
 
 import ReviewsIndicator from '../ReviewsIndicator/ReviewsIndicator';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 export default function DiscoverCard({ game }) {
   return (
@@ -40,9 +41,13 @@ export default function DiscoverCard({ game }) {
 
           <div className="game-tags">
             {game.tags.map((tag) => (
-              <span key={tag} className="game-tag">
+              <Link
+                to={`/store/browse?f=${tag}`}
+                key={tag}
+                className="game-tag"
+              >
                 {tag}
-              </span>
+              </Link>
             ))}
             <span className="game-tag">+</span>
           </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import './StoreDiscover.css';
 
 import DiscoverCard from '../DiscoverCard/DiscoverCard';
-import { games } from '../../utils/gameList';
+import { discoverGames } from '../../utils/gameList';
 
 export default function StoreDiscover() {
   return (
@@ -26,7 +26,7 @@ export default function StoreDiscover() {
         </div>
 
         <div className="store-section discovery">
-          {games.map((game) => (
+          {discoverGames.map((game) => (
             <DiscoverCard key={game.id} game={game} />
           ))}
         </div>

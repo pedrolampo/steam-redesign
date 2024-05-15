@@ -8,7 +8,7 @@ export default function BrowseCard({ game }) {
     <div className="browse-card">
       <div className="info-container">
         <img
-          src={`/media/images/games/${game.folderName}/cover.png`}
+          src={`/media/images/games/${game.folderName}/browse.png`}
           alt={`${game.name}`}
         />
 

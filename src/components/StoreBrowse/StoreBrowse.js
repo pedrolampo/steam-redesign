@@ -1,12 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './StoreBrowse.css';
+
+import { useSearchParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 import { Carousel } from 'react-bootstrap';
 import Accordion from '../Accordion/Accordion';
-
-import { games, storeCategories } from '../../utils/gameList';
-import { v4 as uuidv4 } from 'uuid';
 import BrowseCard from '../BrowseCard/BrowseCard';
+
+import { browseGames, storeCategories } from '../../utils/gameList';
 
 export default function StoreBrowse() {
   const [filteredTags, setFilteredTags] = useState([
@@ -28,16 +30,43 @@ export default function StoreBrowse() {
     },
   ]);
   const formRef = useRef();
+  const [params, setParams] = useSearchParams();
+
+  useEffect(() => {
+    setParams({
+      q: 'all-items',
+    });
+  }, []); // eslint-disable-line
 
   const addTag = (name) => {
-    setFilteredTags((prevTags) => [...prevTags, { name: name, id: uuidv4() }]);
+    const id = uuidv4();
+    setFilteredTags((prevTags) => [...prevTags, { name: name, id: id }]);
+    params.append('f', id);
+    setParams(params);
   };
 
   const deleteTag = (id) => {
+    const filters = params.getAll('f');
+
     setFilteredTags((prevTags) => {
       return prevTags.filter((tag) => tag.id !== id);
     });
+
+    params.delete(
+      'f',
+      filters.filter((tag) => tag === id)
+    );
+    setParams(params);
   };
+
+  const setQuery = (query) => {
+    setParams({ q: query });
+  };
+
+  // const setFilters = (filter) => {
+  //   params.set('f', filter)
+  //   setParams()
+  // }
 
   return (
     <div className="store-browse">
@@ -80,15 +109,78 @@ export default function StoreBrowse() {
             </div>
 
             <div className="top-filter-options">
-              <span className="top-filter-option active">All Items</span>
-              <span className="top-filter-option">New and Trending</span>
-              <span className="top-filter-option">Top Sellers</span>
-              <span className="top-filter-option">Top Rated</span>
-              <span className="top-filter-option">Discounted</span>
-              <span className="top-filter-option">Popular</span>
-              <span className="top-filter-option">Coming Soon</span>
-              <span className="top-filter-option">On Wishlist</span>
-              <span className="top-filter-option">Upcoming Events</span>
+              <span
+                onClick={() => setQuery('all items')}
+                className={`top-filter-option ${
+                  params.get('q') === 'all items' ? 'active' : ''
+                }`}
+              >
+                All Items
+              </span>
+              <span
+                onClick={() => setQuery('new and -trending')}
+                className={`top-filter-option ${
+                  params.get('q') === 'new and trending' ? 'active' : ''
+                }`}
+              >
+                New and Trending
+              </span>
+              <span
+                onClick={() => setQuery('top sellers')}
+                className={`top-filter-option ${
+                  params.get('q') === 'top sellers' ? 'active' : ''
+                }`}
+              >
+                Top Sellers
+              </span>
+              <span
+                onClick={() => setQuery('top rated')}
+                className={`top-filter-option ${
+                  params.get('q') === 'top rated' ? 'active' : ''
+                }`}
+              >
+                Top Rated
+              </span>
+              <span
+                onClick={() => setQuery('discounted')}
+                className={`top-filter-option ${
+                  params.get('q') === 'discounted' ? 'active' : ''
+                }`}
+              >
+                Discounted
+              </span>
+              <span
+                onClick={() => setQuery('popular')}
+                className={`top-filter-option ${
+                  params.get('q') === 'popular' ? 'active' : ''
+                }`}
+              >
+                Popular
+              </span>
+              <span
+                onClick={() => setQuery('coming soon')}
+                className={`top-filter-option ${
+                  params.get('q') === 'coming soon' ? 'active' : ''
+                }`}
+              >
+                Coming Soon
+              </span>
+              <span
+                onClick={() => setQuery('on wishlist')}
+                className={`top-filter-option ${
+                  params.get('q') === 'on wishlist' ? 'active' : ''
+                }`}
+              >
+                On Wishlist
+              </span>
+              <span
+                onClick={() => setQuery('upcoming events')}
+                className={`top-filter-option ${
+                  params.get('q') === 'upcoming events' ? 'active' : ''
+                }`}
+              >
+                Upcoming Events
+              </span>
             </div>
           </div>
 
@@ -229,7 +321,7 @@ export default function StoreBrowse() {
             </div>
 
             <div className="game-list">
-              {games.map((game) => (
+              {browseGames.map((game) => (
                 <BrowseCard key={game.id} game={game} />
               ))}
             </div>
