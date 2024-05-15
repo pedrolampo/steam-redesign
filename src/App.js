@@ -11,6 +11,13 @@ import Footer from './components/Footer/Footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+fetch(
+  'http://api.steampowered.com/ISteamWebAPIUtil/GetSupportedAPIList/v1/?key=FC247331076EB69673B6D48C88A6D979&steamid=000123000456'
+)
+  .then((res) => res.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+
 function App() {
   const user = {
     id: 1,
