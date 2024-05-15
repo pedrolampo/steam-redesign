@@ -13,9 +13,10 @@
 .accordion .accordion-header img {
   width: 2em;
   transition: rotate 0.2s ease-in-out;
+  rotate: -180deg;
 }
 .accordion .accordion-header.collapsed img {
-  rotate: -180deg;
+  rotate: 0deg;
 }
 
 .accordion .accordion-body {
@@ -41,6 +42,7 @@
   border-radius: 3px;
   padding: 0.5em 1em;
   cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
 }
 .accordion .accordion-body .accordion-body-item:hover {
   background-color: #3138436e;
@@ -57,6 +59,7 @@
   padding: 0.5em 1em;
   color: var(--text-dim);
   cursor: pointer;
+  transition: 0.1s ease-in-out;
 }
 .accordion .accordion-body .see-more:hover {
   color: var(--text-main);

@@ -15,6 +15,7 @@
 .button.primary button {
   color: var(--text-main);
   background-color: var(--color-secondary);
+  transition: 85ms ease-in-out;
 }
 .button.primary:hover button {
   color: var(--bg-main);
@@ -24,6 +25,7 @@
 .button.secondary button {
   color: var(--text-main);
   background-color: var(--bg-highlight);
+  transition: 85ms ease-in-out;
 }
 .button.secondary:hover button {
   color: var(--text-main);
@@ -34,6 +36,7 @@
   border: 1px solid #383d43;
   color: var(--text-dim);
   background-color: transparent;
+  transition: 85ms ease-in-out;
 }
 .button.tertiary:hover button {
   border: 1px solid var(--text-dim);

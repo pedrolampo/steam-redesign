@@ -34,7 +34,7 @@ export default function StoreBrowse() {
 
   useEffect(() => {
     setParams({
-      q: 'all-items',
+      q: 'all items',
     });
   }, []); // eslint-disable-line
 

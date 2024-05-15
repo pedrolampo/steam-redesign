@@ -62,8 +62,13 @@
   height: 2.8em;
   width: 4.2em;
   font-size: 0.9em;
+  position: relative;
+  transition: background-color 0.1s ease-in-out;
 }
 .user-section .user-section-button:hover {
+  background-color: var(--bg-hover);
+}
+.user-section .user-section-button:has(.dropdown.show) {
   background-color: var(--bg-hover);
 }
 .user-section .user-section-button img {
@@ -86,6 +91,125 @@
 .user-section .wallet-funds {
   color: var(--text-dim);
 }
+.user-section .user-dropdown {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  border-radius: 3px;
+  background-color: var(--bg-highlight);
+  display: flex;
+  flex-direction: column;
+
+  display: none;
+}
+.user-section .user-dropdown.show {
+  display: flex;
+}
+.user-section .user-dropdown .user-dropdown-btn {
+  background-color: transparent;
+  padding: 0.85em 1em;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: background-color 0.1s ease-in-out;
+}
+.user-section .user-dropdown .user-dropdown-btn:hover {
+  background-color: var(--bg-hover);
+}
+
+.user-section .notifications-dropdown {
+  position: absolute;
+  top: 140%;
+  left: 0;
+  width: 21em;
+  z-index: 999;
+  border-radius: 3px;
+  background-color: var(--bg-highlight);
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+  cursor: auto;
+
+  display: none;
+}
+.user-section .notifications-dropdown.show {
+  display: flex;
+}
+.user-section .notifications-dropdown .notif-drop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-section .notifications-dropdown .notif-drop-header h6 {
+  margin: 0;
+}
+.user-section .notifications-dropdown .notif-drop-header .notif-drop-btns {
+  display: flex;
+  gap: 0.75em;
+}
+.user-section
+  .notifications-dropdown
+  .notif-drop-header
+  .notif-drop-btns
+  > div {
+  padding: 0.3em 0.5em;
+  border-radius: 3px;
+  background-color: #76808c0f;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+.user-section
+  .notifications-dropdown
+  .notif-drop-header
+  .notif-drop-btns
+  > div:hover {
+  background-color: #76808c36;
+}
+.user-section .notifications-dropdown .notif-drop-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+.user-section .notif-drop-body .notif-drop-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  background-color: #0e141b7a;
+  padding: 0.75em;
+  font-size: 0.95em;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.user-section .notif-drop-body .notif-drop-item .notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-dim);
+  font-size: 0.9em;
+}
+.user-section
+  .notif-drop-body
+  .notif-drop-item
+  .notification-header
+  :first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.user-section
+  .notif-drop-body
+  .notif-drop-item
+  .notification-header
+  .notification-icon {
+  width: 12px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+.user-section .notif-drop-body .notif-drop-item .notification-body span {
+  color: var(--color-primary);
+}
 
 .user-section .help {
   color: var(--text-dim);
@@ -97,6 +221,7 @@
   align-items: center;
   cursor: pointer;
   color: var(--text-dim);
+  transition: color 0.1s ease-in-out;
 }
 .user-section .view img {
   width: 1.25em;

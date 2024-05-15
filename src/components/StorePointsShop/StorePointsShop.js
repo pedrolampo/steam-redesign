@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './StorePointsShop.css';
 
 import Button from '../Button/Button';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { pointsShopSections } from '../../utils/points-shop-sections';
 
 export default function StorePointsShop() {
@@ -30,7 +30,9 @@ export default function StorePointsShop() {
           <div className="buttons-container">
             <Button variant="tertiary" text="How it works" />
             <Button variant="tertiary" text="History" />
-            <Button variant="tertiary" text="My Profile" />
+            <Link to="/profile">
+              <Button variant="tertiary" text="My Profile" />
+            </Link>
             <div className="points-indicator">
               <img alt="points icon" src="/media/images/points-icon.png" />
               2,500

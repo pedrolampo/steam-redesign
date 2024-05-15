@@ -58,6 +58,7 @@ div.navbar {
   border-radius: 3px;
   color: var(--text-main);
   text-decoration: none;
+  transition: background-color 0.1s ease-in-out;
 }
 .navbar .navbar-button:hover {
   background-color: var(--bg-hover);
