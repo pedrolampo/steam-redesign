@@ -5,6 +5,7 @@ import './styles/store.css';
 import StoreHome from '../components/StoreHome/StoreHome';
 import StoreBrowse from '../components/StoreBrowse/StoreBrowse';
 import StoreDiscover from '../components/StoreDiscover/StoreDiscover';
+import StorePointsShop from '../components/StorePointsShop/StorePointsShop';
 
 export default function Store() {
   const { pathname } = useLocation();
@@ -25,6 +26,9 @@ export default function Store() {
 
       case '/store/discover':
         return <StoreDiscover />;
+
+      case '/store/points-shop':
+        return <StorePointsShop />;
 
       default:
         return;
