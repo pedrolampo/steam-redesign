@@ -205,7 +205,7 @@
   font-family: MotivaSans;
 }
 
-.store-browse .navbar-input :last-child {
+.store-browse .navbar-input > div :last-child:has(svg) {
   display: none;
 }
 

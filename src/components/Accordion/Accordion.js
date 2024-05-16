@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Accordion.css';
 import { useSearchParams } from 'react-router-dom';
 
-export default function Accordion({ title, items, event }) {
+export default function Accordion({ title, items, setFilteredTags }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [currentItems, setCurrentItems] = useState(5);
   const [slicedItems, setSlicedItems] = useState(items?.slice(0, 5));
@@ -17,17 +17,21 @@ export default function Accordion({ title, items, event }) {
     return params.getAll('f').includes(id);
   };
 
-  const setFilter = (id) => {
+  const setFilter = (tag) => {
     const filters = params.getAll('f');
-    if (filters.includes(id)) {
+    if (filters.includes(tag.id)) {
       params.delete(
         'f',
-        filters.filter((tag) => tag === id)
+        filters.filter((filter) => filter === tag.id)
       );
       setParams(params);
+      setFilteredTags((prevTags) => {
+        return prevTags.filter((filter) => filter.id !== tag.id);
+      });
     } else {
-      params.append('f', id);
+      params.append('f', tag.id);
       setParams(params);
+      setFilteredTags((prev) => [...prev, { label: tag.label, id: tag.id }]);
     }
   };
 
@@ -46,7 +50,7 @@ export default function Accordion({ title, items, event }) {
       <div className={`accordion-body ${isCollapsed ? 'collapsed' : ''}`}>
         {slicedItems?.map((item) => (
           <div
-            onClick={() => setFilter(item.id)}
+            onClick={() => setFilter(item)}
             key={item.id}
             className={`accordion-body-item ${
               isFiltered(item.id) && 'selected'

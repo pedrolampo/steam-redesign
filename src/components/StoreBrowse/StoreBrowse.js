@@ -52,26 +52,41 @@ export default function StoreBrowse() {
   }, []); // eslint-disable-line
 
   const addTag = (tag) => {
+    if (typeof tag === 'string') return;
+
+    const filteredTagsIds = filteredTags.map((item) => item.id);
+    if (filteredTagsIds.includes(tag.value)) return;
+
     setFilteredTags((prevTags) => [
       ...prevTags,
       { label: tag.label, id: tag.value },
     ]);
+
     params.append('f', tag.value);
     setParams(params);
   };
+
   const deleteTag = (id) => {
     const filters = params.getAll('f');
 
     setFilteredTags((prevTags) => {
       return prevTags.filter((tag) => tag.id !== id);
     });
-    console.log(filteredTags);
 
     params.delete(
       'f',
       filters.filter((tag) => tag === id)
     );
     setParams(params);
+  };
+
+  const clearFilters = () => {
+    params.getAll('f').forEach((filter) => {
+      console.log(filter);
+      params.delete('f', filter);
+      setParams(params);
+      setFilteredTags([]);
+    });
   };
 
   const setQuery = (query) => {
@@ -199,6 +214,9 @@ export default function StoreBrowse() {
               <div className="side-filter-title">
                 <span>FILTERS</span>
                 <img
+                  onClick={() => {
+                    clearFilters();
+                  }}
                   src="/media/images/icons/clear-filters-icon.png"
                   alt="clear filters icon"
                 />
@@ -213,11 +231,6 @@ export default function StoreBrowse() {
                     e.target[0].value = '';
                   }}
                 >
-                  {/* <input
-                    className="navbar-input"
-                    type="text"
-                    placeholder="Search..."
-                  /> */}
                   <ReactSelect
                     className="navbar-input"
                     styles={selectStyles}
@@ -233,8 +246,6 @@ export default function StoreBrowse() {
                   <svg
                     className="navbar-search-icon"
                     onClick={() => formRef.current.requestSubmit()}
-                    // width="20"
-                    // height="20"
                     viewBox="0 0 20 20"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -266,6 +277,7 @@ export default function StoreBrowse() {
               <span className="divider"></span>
 
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Top-Level Genres"
                 items={categories.filter(
                   (item) => item.category === 'top level'
@@ -275,12 +287,14 @@ export default function StoreBrowse() {
               <span className="divider"></span>
 
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Genres"
                 items={categories.filter((item) => item.category === 'genres')}
               />
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Sub-genres"
                 items={categories.filter(
                   (item) => item.category === 'sub-genres'
@@ -289,18 +303,21 @@ export default function StoreBrowse() {
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Visuals & Viewpoint"
                 items={categories.filter((item) => item.category === 'visuals')}
               />
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Themes & Moods"
                 items={categories.filter((item) => item.category === 'themes')}
               />
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Features"
                 items={categories.filter(
                   (item) => item.category === 'features'
@@ -309,12 +326,14 @@ export default function StoreBrowse() {
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Players"
                 items={categories.filter((item) => item.category === 'players')}
               />
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Platform"
                 items={categories.filter(
                   (item) => item.category === 'platform'
@@ -323,6 +342,7 @@ export default function StoreBrowse() {
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Language"
                 items={categories.filter(
                   (item) => item.category === 'language'
@@ -331,12 +351,14 @@ export default function StoreBrowse() {
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Price"
                 items={categories.filter((item) => item.category === 'price')}
               />
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Achievements"
                 items={categories.filter(
                   (item) => item.category === 'achievements'
@@ -345,6 +367,7 @@ export default function StoreBrowse() {
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Trading Cards"
                 items={categories.filter(
                   (item) => item.category === 'trading-cards'
@@ -353,6 +376,7 @@ export default function StoreBrowse() {
 
               <span className="divider"></span>
               <Accordion
+                setFilteredTags={setFilteredTags}
                 title="Items"
                 items={categories.filter((item) => item.category === 'items')}
               />
