@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import './StoreBrowse.css';
 
 import { useSearchParams } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
 
 import Accordion from '../Accordion/Accordion';
 import BrowseCard from '../BrowseCard/BrowseCard';

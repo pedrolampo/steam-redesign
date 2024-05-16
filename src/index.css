@@ -61,7 +61,7 @@ div.navbar {
   transition: background-color 0.1s ease-in-out;
 }
 .navbar .navbar-button:hover {
-  background-color: var(--bg-hover);
+  background-color: #4c596f75;
 }
 .navbar .navbar-button.active {
   background-color: var(--color-secondary);
