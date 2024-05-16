@@ -219,7 +219,12 @@
   height: 15em;
   z-index: 999;
   border-radius: 3px;
-  background-color: var(--bg-highlight);
+  background: rgb(75, 97, 155);
+  background: linear-gradient(
+    180deg,
+    rgba(75, 97, 155, 1) 0%,
+    rgba(30, 35, 41, 1) 100%
+  );
   flex-direction: column;
   padding: 1em;
   gap: 1em;
@@ -229,6 +234,49 @@
 }
 .user-section .friends-dropdown.show {
   display: flex;
+}
+.user-section .friends-dropdown .friends-drop-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.user-section .friends-drop-header .friends-header-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.user-section .friends-drop-header .friends-header-user > img {
+  width: 3em;
+  height: 100%;
+  border-radius: 2px;
+}
+.user-section .friends-drop-header .friends-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.user-section .friends-drop-header .friends-user-info .friends-drop-username {
+  font-size: 1.25em;
+}
+.user-section .friends-drop-header .friends-user-info > div {
+  display: flex;
+  gap: 0.3em;
+  align-items: center;
+}
+.user-section .friends-drop-header .friends-user-info .friends-status-icon {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}
+.user-section .friends-drop-header .friends-user-info .friends-status {
+  color: var(--color-primary);
+  font-size: 0.75em;
+  height: 1.3em;
+}
+.user-section .friends-drop-header .friends-user-info img {
+  width: 1.25em;
 }
 
 .user-section .help {

@@ -34,7 +34,10 @@ export default function StorePointsShop() {
               <Button variant="tertiary" text="My Profile" />
             </Link>
             <div className="points-indicator">
-              <img alt="points icon" src="/media/images/points-icon.png" />
+              <img
+                alt="points icon"
+                src="/media/images/icons/points-icon.png"
+              />
               2,500
             </div>
           </div>
@@ -99,7 +102,7 @@ export default function StorePointsShop() {
                     <span className="point-shop-price">
                       <img
                         alt="points icon"
-                        src="/media/images/points-icon.png"
+                        src="/media/images/icons/points-icon.png"
                       />{' '}
                       5,000
                     </span>

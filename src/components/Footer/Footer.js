@@ -44,8 +44,8 @@ export default function Footer() {
       </div>
 
       <div className="footer-container socials">
-        <img alt="facebook logo" src="/media/images/fb-logo.png" />
-        <img alt="twitter logo" src="/media/images/tw-logo.png" />
+        <img alt="facebook logo" src="/media/images/icons/fb-logo.png" />
+        <img alt="twitter logo" src="/media/images/icons/tw-logo.png" />
       </div>
     </div>
   );

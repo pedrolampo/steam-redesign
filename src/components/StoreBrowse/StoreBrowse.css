@@ -196,18 +196,19 @@
 .store-browse .navbar-input {
   outline: none;
   border: none;
-  background-color: #212b452b;
+  /* background-color: #212b452b; */
   font-size: 0.9em;
-  padding: 0.7em 1.25em;
+  /* padding: 0.7em 1.25em; */
   border-radius: 3px;
   width: 100%;
   color: var(--text-main);
   font-family: MotivaSans;
 }
-.store-browse .navbar-input::placeholder {
-  color: var(--color-secondary);
-  font-family: MotivaSans;
+
+.store-browse .navbar-input .css-1hb7zxy-IndicatorsContainer {
+  display: none;
 }
+
 .store-browse .navbar-search-icon {
   position: absolute;
   height: 60%;

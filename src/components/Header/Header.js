@@ -101,7 +101,7 @@ export default function Header({ user }) {
           }}
           className="user-section-button friends-button"
         >
-          <img alt="friends icon" src="/media/images/friends-icon.png" />
+          <img alt="friends icon" src="/media/images/icons/friends-icon.png" />
 
           <div
             onClick={() => {
@@ -111,9 +111,57 @@ export default function Header({ user }) {
               friendsDropdownShow && 'show'
             }`}
           >
-            <div className="notif-drop-header"></div>
+            <div className="friends-drop-header">
+              <div className="friends-header-user">
+                <img alt="user icon" src="/media/images/profile-picture.jpg" />
+
+                <div className="friends-user-info">
+                  <span className="friends-drop-username">Pedrolampo</span>
+
+                  <div>
+                    <div className="friends-status-icon"></div>
+                    <span className="friends-status">Online</span>
+                    <img
+                      alt="dropdown arrow"
+                      src="/media/images/icons/dropdown-arrow-grey.png"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <svg
+                width="27"
+                height="27"
+                viewBox="0 0 27 27"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clipPath="url(#clip0_452_9673)">
+                  <rect
+                    width="27"
+                    height="27"
+                    rx="3"
+                    fill="#76808C"
+                    fillOpacity="0.05"
+                  />
+                  <path
+                    d="M13.5 9.25C13.0325 9.25 12.65 9.6325 12.65 10.1V12.65H10.1C9.6325 12.65 9.25 13.0325 9.25 13.5C9.25 13.9675 9.6325 14.35 10.1 14.35H12.65V16.9C12.65 17.3675 13.0325 17.75 13.5 17.75C13.9675 17.75 14.35 17.3675 14.35 16.9V14.35H16.9C17.3675 14.35 17.75 13.9675 17.75 13.5C17.75 13.0325 17.3675 12.65 16.9 12.65H14.35V10.1C14.35 9.6325 13.9675 9.25 13.5 9.25ZM13.5 5C8.808 5 5 8.808 5 13.5C5 18.192 8.808 22 13.5 22C18.192 22 22 18.192 22 13.5C22 8.808 18.192 5 13.5 5ZM13.5 20.3C9.7515 20.3 6.7 17.2485 6.7 13.5C6.7 9.7515 9.7515 6.7 13.5 6.7C17.2485 6.7 20.3 9.7515 20.3 13.5C20.3 17.2485 17.2485 20.3 13.5 20.3Z"
+                    fill="#76808C"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_452_9673">
+                    <rect width="27" height="27" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
 
             <div className="friends-drop-body">
+              <div className="friends-drop-tab">
+                <div className="friends-header"></div>
+              </div>
+
               <div className="friends-drop-tab">
                 <div className="friends-header"></div>
               </div>
@@ -129,7 +177,10 @@ export default function Header({ user }) {
           }}
           className="user-section-button notifications-button"
         >
-          <img alt="notifications icon" src="/media/images/notif-icon.png" />
+          <img
+            alt="notifications icon"
+            src="/media/images/icons/notif-icon.png"
+          />
 
           <div
             onClick={() => {
@@ -242,7 +293,7 @@ export default function Header({ user }) {
           {user.username} <span className="wallet-funds">$4.20</span>
           <img
             alt="dropdown arrow icon"
-            src="/media/images/dropdown-arrow.png"
+            src="/media/images/icons/dropdown-arrow.png"
           />
           <div
             className={`user-dropdown dropdown ${userDropdownShow && 'show'}`}
@@ -263,7 +314,7 @@ export default function Header({ user }) {
           View
           <img
             alt="dropdown arrow"
-            src="/media/images/dropdown-arrow-grey.png"
+            src="/media/images/icons/dropdown-arrow-grey.png"
           />
         </div>
       </div>

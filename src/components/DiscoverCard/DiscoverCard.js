@@ -53,7 +53,10 @@ export default function DiscoverCard({ game }) {
           </div>
 
           <div className="platform-release">
-            <img src={`/media/images/windows-logo.png`} alt="windows logo" />
+            <img
+              src={`/media/images/icons/windows-logo.png`}
+              alt="windows logo"
+            />
             <span className="release-date">{game.releaseDate}</span>
           </div>
 

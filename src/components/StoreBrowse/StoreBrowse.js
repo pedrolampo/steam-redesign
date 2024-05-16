@@ -4,33 +4,47 @@ import './StoreBrowse.css';
 import { useSearchParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Carousel } from 'react-bootstrap';
 import Accordion from '../Accordion/Accordion';
 import BrowseCard from '../BrowseCard/BrowseCard';
+import ReactSelect from 'react-select';
+import { Carousel } from 'react-bootstrap';
 
 import { browseGames, storeCategories } from '../../utils/gameList';
+import { categories } from '../../utils/categories';
 
 export default function StoreBrowse() {
-  const [filteredTags, setFilteredTags] = useState([
-    {
-      id: uuidv4(),
-      name: 'Adventure',
-    },
-    {
-      id: uuidv4(),
-      name: 'Casual',
-    },
-    {
-      id: uuidv4(),
-      name: 'RPG',
-    },
-    {
-      id: uuidv4(),
-      name: 'First-Person Shooter',
-    },
-  ]);
+  const [filteredTags, setFilteredTags] = useState([]);
   const formRef = useRef();
   const [params, setParams] = useSearchParams();
+
+  const selectStyles = {
+    control: (baseStyles) => ({
+      ...baseStyles,
+      backgroundColor: '#212b452b',
+      color: 'var(--text-main)',
+      border: 'none',
+    }),
+    input: (baseStyles) => ({
+      ...baseStyles,
+      color: 'var(--text-main)',
+    }),
+    menu: (baseStyles) => ({
+      ...baseStyles,
+      backgroundColor: 'var(--bg-highlight)',
+      color: 'var(--text-main)',
+    }),
+    option: (baseStyles) => ({
+      ...baseStyles,
+      backgroundColor: 'var(--bg-highlight)',
+      color: 'var(--text-main)',
+      ':active': {
+        backgroundColor: 'var(--bg-hover)',
+      },
+      ':hover': {
+        backgroundColor: 'var(--bg-hover)',
+      },
+    }),
+  };
 
   useEffect(() => {
     setParams({
@@ -38,19 +52,21 @@ export default function StoreBrowse() {
     });
   }, []); // eslint-disable-line
 
-  const addTag = (name) => {
-    const id = uuidv4();
-    setFilteredTags((prevTags) => [...prevTags, { name: name, id: id }]);
-    params.append('f', id);
+  const addTag = (tag) => {
+    setFilteredTags((prevTags) => [
+      ...prevTags,
+      { label: tag.label, id: tag.value },
+    ]);
+    params.append('f', tag.value);
     setParams(params);
   };
-
   const deleteTag = (id) => {
     const filters = params.getAll('f');
 
     setFilteredTags((prevTags) => {
       return prevTags.filter((tag) => tag.id !== id);
     });
+    console.log(filteredTags);
 
     params.delete(
       'f',
@@ -62,11 +78,6 @@ export default function StoreBrowse() {
   const setQuery = (query) => {
     setParams({ q: query });
   };
-
-  // const setFilters = (filter) => {
-  //   params.set('f', filter)
-  //   setParams()
-  // }
 
   return (
     <div className="store-browse">
@@ -203,10 +214,22 @@ export default function StoreBrowse() {
                     e.target[0].value = '';
                   }}
                 >
-                  <input
+                  {/* <input
                     className="navbar-input"
                     type="text"
                     placeholder="Search..."
+                  /> */}
+                  <ReactSelect
+                    className="navbar-input"
+                    styles={selectStyles}
+                    value=""
+                    options={categories.map((tag) => {
+                      return { label: tag.label, value: tag.id };
+                    })}
+                    placeholder="Search..."
+                    onChange={(tag) => {
+                      addTag(tag);
+                    }}
                   />
                   <svg
                     className="navbar-search-icon"
@@ -235,7 +258,7 @@ export default function StoreBrowse() {
               <div className="filter-tags-container">
                 {filteredTags.map((tag) => (
                   <span key={tag.id} className="filter-tag">
-                    {tag.name}{' '}
+                    {tag.label}{' '}
                     <span onClick={() => deleteTag(tag.id)}>&#10005;</span>
                   </span>
                 ))}
@@ -245,79 +268,95 @@ export default function StoreBrowse() {
 
               <Accordion
                 title="Top-Level Genres"
-                items={[
-                  { id: uuidv4(), name: 'Adventure', qty: '5,000' },
-                  { id: uuidv4(), name: 'Casual', qty: '5,000' },
-                  { id: uuidv4(), name: 'RPG', qty: '5,000' },
-                  { id: uuidv4(), name: 'Strategy', qty: '5,000' },
-                  { id: uuidv4(), name: 'Simulation', qty: '5,000' },
-                  { id: uuidv4(), name: 'Free-to-Play', qty: '5,000' },
-                  { id: uuidv4(), name: 'Shooter', qty: '5,000' },
-                  { id: uuidv4(), name: 'Action', qty: '5,000' },
-                ]}
+                items={categories.filter(
+                  (item) => item.category === 'top level'
+                )}
               />
 
               <span className="divider"></span>
 
               <Accordion
                 title="Genres"
-                items={[
-                  { id: uuidv4(), name: 'JRPG', qty: '5,000' },
-                  { id: uuidv4(), name: 'Sandbox', qty: '5,000' },
-                  { id: uuidv4(), name: 'Rogue-Like', qty: '5,000' },
-                  { id: uuidv4(), name: 'Platformer', qty: '5,000' },
-                  { id: uuidv4(), name: 'Arcade & Rhythm', qty: '5,000' },
-                  {
-                    id: uuidv4(),
-                    name: 'Fighting & Martial Arts',
-                    qty: '5,000',
-                  },
-                  { id: uuidv4(), name: 'First-Person Shooter', qty: '5,000' },
-                  { id: uuidv4(), name: 'Hack & Slash', qty: '5,000' },
-                  { id: uuidv4(), name: 'Platformer & Runner', qty: '5,000' },
-                  { id: uuidv4(), name: 'Third-Person Shooter', qty: '5,000' },
-                  { id: uuidv4(), name: 'schnmup', qty: '5,000' },
-                  { id: uuidv4(), name: 'Action RPG', qty: '5,000' },
-                  { id: uuidv4(), name: 'Adventure RPG', qty: '5,000' },
-                  { id: uuidv4(), name: 'Party-Based', qty: '5,000' },
-                  { id: uuidv4(), name: 'Strategy RPG', qty: '5,000' },
-                  { id: uuidv4(), name: 'Turn-Based', qty: '5,000' },
-                  { id: uuidv4(), name: 'Card & Board', qty: '5,000' },
-                ]}
+                items={categories.filter((item) => item.category === 'genres')}
               />
 
               <span className="divider"></span>
-              <Accordion title="Sub-genres" />
+              <Accordion
+                title="Sub-genres"
+                items={categories.filter(
+                  (item) => item.category === 'sub-genres'
+                )}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Visuals & Viewpoint" />
+              <Accordion
+                title="Visuals & Viewpoint"
+                items={categories.filter((item) => item.category === 'visuals')}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Themes & Moods" />
+              <Accordion
+                title="Themes & Moods"
+                items={categories.filter((item) => item.category === 'themes')}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Features" />
+              <Accordion
+                title="Features"
+                items={categories.filter(
+                  (item) => item.category === 'features'
+                )}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Players" />
+              <Accordion
+                title="Players"
+                items={categories.filter((item) => item.category === 'players')}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Platform" />
+              <Accordion
+                title="Platform"
+                items={categories.filter(
+                  (item) => item.category === 'platform'
+                )}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Language" />
+              <Accordion
+                title="Language"
+                items={categories.filter(
+                  (item) => item.category === 'language'
+                )}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Price" />
+              <Accordion
+                title="Price"
+                items={categories.filter((item) => item.category === 'price')}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Achievements" />
+              <Accordion
+                title="Achievements"
+                items={categories.filter(
+                  (item) => item.category === 'achievements'
+                )}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Trading Cards" />
+              <Accordion
+                title="Trading Cards"
+                items={categories.filter(
+                  (item) => item.category === 'trading-cards'
+                )}
+              />
 
               <span className="divider"></span>
-              <Accordion title="Items" />
+              <Accordion
+                title="Items"
+                items={categories.filter((item) => item.category === 'items')}
+              />
             </div>
 
             <div className="game-list">

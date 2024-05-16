@@ -128,8 +128,8 @@ export default function StoreHome() {
                           <span className="game-title">{game.name}</span>
                           <div className="footer-container">
                             <img
-                              className="windows-logo"
-                              src={`media/images/windows-logo.png`}
+                              className="icons/windows-logo"
+                              src={`media/images/icons/windows-logo.png`}
                               alt="windows logo"
                             />
                             <div className="dct-container">
@@ -210,8 +210,8 @@ export default function StoreHome() {
                           <span className="game-title">{game.name}</span>
                           <div className="footer-container">
                             <img
-                              className="windows-logo"
-                              src={`media/images/windows-logo.png`}
+                              className="icons/windows-logo"
+                              src={`media/images/icons/windows-logo.png`}
                               alt="windows logo"
                             />
                             <div className="play-btn-container">
@@ -292,8 +292,8 @@ export default function StoreHome() {
                           <span className="game-title">{game.name}</span>
                           <div className="footer-container">
                             <img
-                              className="windows-logo"
-                              src={`media/images/windows-logo.png`}
+                              className="icons/windows-logo"
+                              src={`media/images/icons/windows-logo.png`}
                               alt="windows logo"
                             />
                             <div className="play-btn-container">
@@ -336,8 +336,8 @@ export default function StoreHome() {
                           <span className="game-name">{game.name}</span>
                           <div className="game-info-footer">
                             <img
-                              className="windows-logo"
-                              src={`media/images/windows-logo.png`}
+                              className="icons/windows-logo"
+                              src={`media/images/icons/windows-logo.png`}
                               alt="windows logo"
                             />
                             {!game.discPrice ? (
@@ -399,8 +399,8 @@ export default function StoreHome() {
                           <span className="game-title">{game.name}</span>
                           <div className="footer-container">
                             <img
-                              className="windows-logo"
-                              src={`media/images/windows-logo.png`}
+                              className="icons/windows-logo"
+                              src={`media/images/icons/windows-logo.png`}
                               alt="windows logo"
                             />
                             <div className="dct-container">
