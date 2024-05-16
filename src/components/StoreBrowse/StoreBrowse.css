@@ -205,7 +205,7 @@
   font-family: MotivaSans;
 }
 
-.store-browse .navbar-input .css-1hb7zxy-IndicatorsContainer {
+.store-browse .navbar-input :last-child {
   display: none;
 }
 
