@@ -10,9 +10,10 @@
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
 }
-/* .discover-card:hover {
-  background-color: var(--bg-hover);
-} */
+.discover-card:hover {
+  background-color: var(--bg-highlight);
+  outline: 1px solid var(--bg-hover);
+}
 
 .discover-card .info-container {
   display: flex;
@@ -27,6 +28,7 @@
   gap: 0.5em;
 }
 .discover-card .info-container .imgs-container > img {
+  border-radius: 3px;
   height: 100%;
 }
 .discover-card .info-container .imgs-container .side-imgs {
@@ -38,6 +40,11 @@
 .discover-card .info-container .imgs-container .side-imgs img {
   height: 31%;
   border-radius: 3px;
+  transition: transform 100ms ease-in-out;
+}
+.discover-card .info-container .imgs-container .side-imgs img:hover {
+  transform: scale(2.6);
+  transition: transform 200ms ease-in-out;
 }
 
 .discover-card .main-info {

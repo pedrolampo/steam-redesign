@@ -15,12 +15,6 @@ export default function Store() {
       return <StoreHome />;
     }
     switch (pathname) {
-      case '/':
-        return <StoreHome />;
-
-      case '/store':
-        return <StoreHome />;
-
       case '/store/browse':
         return <StoreBrowse />;
 

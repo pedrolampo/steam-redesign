@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './StoreHome.css';
 
@@ -7,7 +7,6 @@ import GameButton from '../GameButton/GameButton';
 import Carousel from 'react-bootstrap/Carousel';
 
 import {
-  gameList,
   specialOffers,
   storeCategories,
   freeToPlay,
@@ -17,11 +16,29 @@ import {
   under5,
   streamedGames,
 } from '../../utils/gameList';
+import { categories } from '../../utils/categories';
 
 export default function StoreHome() {
-  const featuredGames = gameList.slice(0, 3);
   const specialOffersCarouselQty = ['0', '1', '2', '3'];
-  const cateogriesCarouselQty = ['0', '1'];
+
+  const gamesIds = [1245620, 1145350, 1840080, 1551360, 108600];
+  const [featuredGames, setGames] = useState([]);
+
+  const filteredCategories = categories.filter(
+    (item) => item.category === 'top level'
+  );
+  const cateogriesCarouselQty = parseInt(filteredCategories.length / 5);
+
+  useEffect(() => {
+    gamesIds.forEach((id) => {
+      fetch(`https://steam-api-iota.vercel.app/games/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setGames((prev) => [...prev, data]);
+        })
+        .catch((err) => console.log(err));
+    });
+  }, []); //eslint-disable-line
 
   return (
     <div className="store-home">
@@ -38,44 +55,38 @@ export default function StoreHome() {
           <div className="container featured">
             <Carousel interval={3000} pause="hover" className="store-carousel">
               {featuredGames.map((game) => (
-                <Carousel.Item key={game.id}>
+                <Carousel.Item key={game.steam_appid}>
                   <div className="carousel-item-container">
                     <div className="carousel-img-container">
                       <img
                         className="carousel-main-img"
                         alt={game.name}
-                        src={`media/images/games/${game.folderName}/cover.jpg`}
+                        src={game.header_image}
                       />
                     </div>
 
                     <div className="carousel-game-about">
                       <span className="carousel-game-name">{game.name}</span>
                       <span className="carousel-game-description">
-                        {game.description}
+                        {game.short_description}
                       </span>
                       <div className="carousel-about-imgs">
-                        <img
-                          alt={`${game.name} 1`}
-                          src={`media/images/games/${game.folderName}/store-1.jpg`}
-                        />
-                        <img
-                          alt={`${game.name} 2`}
-                          src={`media/images/games/${game.folderName}/store-2.jpg`}
-                        />
-                        <img
-                          alt={`${game.name} 3`}
-                          src={`media/images/games/${game.folderName}/store-3.jpg`}
-                        />
-                        <img
-                          alt={`${game.name} 4`}
-                          src={`media/images/games/${game.folderName}/store-4.jpg`}
-                        />
+                        {game.screenshots.slice(0, 4).map((img) => (
+                          <img
+                            alt={game.name + img.id}
+                            key={game.name + img.id}
+                            src={img.path_full}
+                          />
+                        ))}
                       </div>
 
                       <div className="carousel-tags-container">
-                        {game.tags.map((tag) => (
-                          <span key={tag} className="carousel-tag">
-                            {tag}
+                        {game.genres.map((tag) => (
+                          <span
+                            key={tag.description + tag.id}
+                            className="carousel-tag"
+                          >
+                            {tag.description}
                           </span>
                         ))}
                         <span className="carousel-tag">+</span>
@@ -90,7 +101,7 @@ export default function StoreHome() {
                         />
                         <div className="carousel-buy-now">
                           <span className="carousel-price">
-                            ${game.basePrice}
+                            {game.price_overview.final_formatted}
                           </span>
                           <Button
                             className="carousel-btn"
@@ -170,21 +181,40 @@ export default function StoreHome() {
           </div>
           <div className="container categories">
             <Carousel interval={null} className="store-carousel">
-              {cateogriesCarouselQty.map((qty) => (
-                <Carousel.Item key={qty}>
-                  <div className="categories-item">
-                    {storeCategories.map((category) => (
-                      <div key={category.id} className="category-carousel-card">
-                        <img
-                          src={`media/images/categories/${category.name.toLowerCase()}.png`}
-                          alt={category.name}
-                        />
-                        <span className="category-title">{category.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </Carousel.Item>
-              ))}
+              <Carousel.Item>
+                <div className="categories-item">
+                  {filteredCategories.slice(0, 5).map((category) => (
+                    <Link
+                      to={`/store/browse?q=all+items&f=${category.id}`}
+                      key={category.id}
+                      className="category-carousel-card"
+                    >
+                      <img
+                        src={`media/images/categories/action.png`}
+                        alt={category.label}
+                      />
+                      <span className="category-title">{category.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="categories-item">
+                  {filteredCategories.slice(5, 10).map((category) => (
+                    <Link
+                      to={`/store/browse?q=all+items&f=${category.id}`}
+                      key={category.id}
+                      className="category-carousel-card"
+                    >
+                      <img
+                        src={`media/images/categories/action.png`}
+                        alt={category.label}
+                      />
+                      <span className="category-title">{category.label}</span>
+                    </Link>
+                  ))}
+                </div>
+              </Carousel.Item>
             </Carousel>
           </div>
         </div>

@@ -6,15 +6,50 @@ import { useSearchParams } from 'react-router-dom';
 import Accordion from '../Accordion/Accordion';
 import BrowseCard from '../BrowseCard/BrowseCard';
 import ReactSelect from 'react-select';
-import { Carousel } from 'react-bootstrap';
+// import { Carousel } from 'react-bootstrap';
 
-import { browseGames, storeCategories } from '../../utils/gameList';
+// import { browseGames, storeCategories } from '../../utils/gameList';
 import { categories } from '../../utils/categories';
 
 export default function StoreBrowse() {
-  const [filteredTags, setFilteredTags] = useState([]);
   const formRef = useRef();
+
+  const gamesIds = [
+    1245620, 275850, 960090, 250320, 601150, 945360, 620980, 108600,
+  ];
+
+  const [filteredTags, setFilteredTags] = useState([]);
   const [params, setParams] = useSearchParams();
+  const [games, setGames] = useState([]);
+  const [filteredGames, setFilteredGames] = useState([]);
+
+  // let url = new URL('http://test.com');
+  // url.searchParams.append('page', 5);
+  // url.searchParams.append('perPage', 15);
+  // console.log(url);
+
+  useEffect(() => {
+    gamesIds.forEach((id) => {
+      fetch(`https://steam-api-iota.vercel.app/games/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setGames((prev) => [...prev, data]);
+        })
+        .catch((err) => console.log(err));
+    });
+  }, []); //eslint-disable-line
+
+  useEffect(() => {
+    if (params.getAll('f').length > 0) {
+      setFilteredGames(
+        games.filter((game) =>
+          game.genres.some((genre) => params.getAll('f').includes(genre.id))
+        )
+      );
+    } else {
+      setFilteredGames(games);
+    }
+  }, [params, games]);
 
   const selectStyles = {
     control: (baseStyles) => ({
@@ -46,9 +81,11 @@ export default function StoreBrowse() {
   };
 
   useEffect(() => {
-    setParams({
-      q: 'all items',
-    });
+    if (!params.getAll('q').length || !params.getAll('f').length) {
+      setParams({
+        q: 'all items',
+      });
+    }
   }, []); // eslint-disable-line
 
   const addTag = (tag) => {
@@ -75,14 +112,13 @@ export default function StoreBrowse() {
 
     params.delete(
       'f',
-      filters.filter((tag) => tag === id)
+      filters.filter((tag) => tag === id.toString())
     );
     setParams(params);
   };
 
   const clearFilters = () => {
     params.getAll('f').forEach((filter) => {
-      console.log(filter);
       params.delete('f', filter);
       setParams(params);
       setFilteredTags([]);
@@ -96,7 +132,7 @@ export default function StoreBrowse() {
   return (
     <div className="store-browse">
       <div className="main-content">
-        <div className="store-section">
+        {/* <div className="store-section">
           <h3>Top Categories</h3>
           <div className="container categories">
             <Carousel interval={null} className="store-carousel">
@@ -115,10 +151,10 @@ export default function StoreBrowse() {
               </Carousel.Item>
             </Carousel>
           </div>
-        </div>
+        </div> */}
 
         <div className="store-section browse-content">
-          <h4>Browse Steam</h4>
+          <h3>Browse Steam</h3>
 
           <div className="filter-top-bar">
             <div className="filter-view">
@@ -143,7 +179,7 @@ export default function StoreBrowse() {
                 All Items
               </span>
               <span
-                onClick={() => setQuery('new and -trending')}
+                onClick={() => setQuery('new and trending')}
                 className={`top-filter-option ${
                   params.get('q') === 'new and trending' ? 'active' : ''
                 }`}
@@ -383,8 +419,8 @@ export default function StoreBrowse() {
             </div>
 
             <div className="game-list">
-              {browseGames.map((game) => (
-                <BrowseCard key={game.id} game={game} />
+              {filteredGames.map((game) => (
+                <BrowseCard key={game.steam_appid} game={game} />
               ))}
             </div>
           </div>

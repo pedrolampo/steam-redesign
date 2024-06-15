@@ -46,7 +46,9 @@
   padding: 0.35em 0.6em;
   border-radius: 3px;
 }
-
+.browse-card .game-tags .game-tag:hover {
+  background-color: var(--bg-hover);
+}
 .browse-card .platform-release {
   display: flex;
   align-items: center;

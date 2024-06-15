@@ -14,15 +14,15 @@ export default function Accordion({ title, items, setFilteredTags }) {
   }, [items, currentItems]);
 
   const isFiltered = (id) => {
-    return params.getAll('f').includes(id);
+    return params.getAll('f').includes(id.toString());
   };
 
   const setFilter = (tag) => {
     const filters = params.getAll('f');
-    if (filters.includes(tag.id)) {
+    if (filters.includes(tag.id.toString())) {
       params.delete(
         'f',
-        filters.filter((filter) => filter === tag.id)
+        filters.filter((filter) => filter === tag.id.toString())
       );
       setParams(params);
       setFilteredTags((prevTags) => {

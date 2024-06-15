@@ -74,6 +74,11 @@
   height: 100%;
   cursor: pointer;
 }
+.store-home .store-carousel .featured .carousel-item {
+  height: 100%;
+  min-height: 25em;
+  cursor: pointer;
+}
 
 .store-home .store-carousel .carousel-inner {
   padding: 1em;
@@ -83,15 +88,18 @@
 .store-home .carousel-img-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 55%;
 }
 .store-home .store-carousel .carousel-main-img {
   border-radius: 3px;
-  height: 100%;
+  height: min-content;
+  min-width: 100%;
 }
 
 .store-home .store-carousel .carousel-item-container {
   display: flex;
-  gap: 1.5em;
+  /* gap: 1.5em; */
   height: 100%;
   justify-content: space-evenly;
 }
@@ -300,6 +308,7 @@
   display: grid;
   place-items: center;
   transition: filter 0.2s ease-in-out;
+  color: var(--text-main);
 }
 .store-home .store-section .categories .category-carousel-card:hover {
   filter: brightness(1.4);

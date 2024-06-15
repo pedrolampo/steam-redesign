@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: 105em;
 }
 
 .store-browse h3 {
@@ -13,13 +14,14 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding-top: 4em;
   background: url('/public/media/images/backgrounds/store-browse.png') no-repeat
     center;
   /* background-position: -15% 0%; */
   padding-bottom: 10em;
+  min-height: 105em;
 }
 .store-browse .main-content .container {
   display: flex;

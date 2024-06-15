@@ -2,18 +2,23 @@ import React from 'react';
 import './ReviewsIndicator.css';
 
 export default function ReviewsIndicator({ reviews }) {
+  const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+  const negativeReviews = parseInt(reviews / randomNumber);
+  const negativePercentage = parseInt((negativeReviews / reviews) * 100);
+
   return (
     <div
       className="reviews-indicator"
       style={{
-        '--positive-reviews': reviews.positive,
-        '--negative-reviews': reviews.negative,
+        '--positive-reviews': `${100 - negativePercentage}%`,
+        '--negative-reviews': `${negativePercentage}%`,
       }}
     >
       <div className="indicators-container">
         <div className="numeric-reviews">
           <span>
-            {reviews.positive}{' '}
+            {100 - negativePercentage}%{' '}
             <svg
               width="13"
               height="13"
@@ -40,7 +45,7 @@ export default function ReviewsIndicator({ reviews }) {
             </svg>
           </span>
           <span>
-            {reviews.negative}{' '}
+            {negativePercentage}%{' '}
             <svg
               width="13"
               height="13"
@@ -62,7 +67,7 @@ export default function ReviewsIndicator({ reviews }) {
           <div className="negative-indicator"></div>
         </div>
       </div>
-      <div className="reviews-amount">{reviews.amount} User Reviews</div>
+      <div className="reviews-amount">{reviews} User Reviews</div>
     </div>
   );
 }

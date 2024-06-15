@@ -2,20 +2,22 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const categories = [
   // TOP LEVEL GENRES
-  { id: uuidv4(), label: 'Adventure', qty: '5,000', category: 'top level' },
-  { id: uuidv4(), label: 'Casual', qty: '5,000', category: 'top level' },
-  { id: uuidv4(), label: 'RPG', qty: '5,000', category: 'top level' },
-  { id: uuidv4(), label: 'Strategy', qty: '5,000', category: 'top level' },
-  { id: uuidv4(), label: 'Simulation', qty: '5,000', category: 'top level' },
+  { id: 1, label: 'Action', qty: '5,000', category: 'top level' },
+  { id: 25, label: 'Adventure', qty: '5,000', category: 'top level' },
+  { id: 4, label: 'Casual', qty: '5,000', category: 'top level' },
+  { id: 3, label: 'RPG', qty: '5,000', category: 'top level' },
+  { id: 2, label: 'Strategy', qty: '5,000', category: 'top level' },
+  { id: 28, label: 'Simulation', qty: '5,000', category: 'top level' },
   { id: uuidv4(), label: 'Free-to-Play', qty: '5,000', category: 'top level' },
   { id: uuidv4(), label: 'Shooter', qty: '5,000', category: 'top level' },
-  { id: uuidv4(), label: 'Action', qty: '5,000', category: 'top level' },
+  { id: 23, label: 'Indie', qty: '5,000', category: 'top level' },
+  { id: uuidv4(), label: 'Rogue-Like', qty: '5,000', category: 'top level' },
 
   // GENRES
   { id: uuidv4(), label: 'JRPG', qty: '5,000', category: 'genres' },
   { id: uuidv4(), label: 'Sandbox', qty: '5,000', category: 'genres' },
-  { id: uuidv4(), label: 'Rogue-Like', qty: '5,000', category: 'genres' },
   { id: uuidv4(), label: 'Arcade & Rhythm', qty: '5,000', category: 'genres' },
+  { id: 70, label: 'Early Acces', qty: '5,000', category: 'genres' },
   {
     id: uuidv4(),
     label: 'First-Person Shooter',
@@ -160,7 +162,7 @@ export const categories = [
     qty: '5,000',
     category: 'players',
   },
-  { id: uuidv4(), label: 'Singleplayer', qty: '5,000', category: 'players' },
+  { id: 2, label: 'Single-Player', qty: '5,000', category: 'players' },
 
   // PLATFROM
   { id: uuidv4(), label: 'Windows', qty: '5,000', category: 'platform' },
@@ -173,7 +175,8 @@ export const categories = [
   },
   { id: uuidv4(), label: 'For PC Cafés', qty: '5,000', category: 'platform' },
 
-  // { id: uuidv4(), label: '', qty: '5,000', category: '' },
+  // { id: 22, label: 'Steam Achievements', qty: '5,000', category: 'features' },
+  // { id: 22, label: 'Full controller support', qty: '5,000', category: 'features' },
 
   // { id: uuidv4(), label: '', qty: '5,000', category: '' },
 
