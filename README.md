@@ -2,7 +2,8 @@
 
 ##### **Big Disclaimer**
 
-This project uses the design created by [Juxtopposed](https://www.youtube.com/@juxtopposed), all credits to the design go to this amazing artist!
+This project uses the design created by [Juxtopposed](https://www.youtube.com/@juxtopposed), all credits to the design go to this amazing artist!  
+You can see a live demo [here](https://peter-steam-redesign.vercel.app/).
 
 ---
 
